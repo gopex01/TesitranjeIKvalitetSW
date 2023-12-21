@@ -1,0 +1,10 @@
+Pravljenje projekta: dotnet new webapi -n ime
+Pokretanje: dotnet watch run
+Dodavanje postgres:dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 6.0.0
+
+
+
+
+dotnet ef migrations add InitialCreate
+
+dotnet ef database update
