@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RNE7R4hDZh/94fel1LewI2UJpEOUsvDDZGeSe5NlRhWGkpBJSeQ69yNNpBEE+o+RrIYlEFSAIEVvXQTcOj4K/w==",
+  "dgSpecHash": "BEUwvdAgxoBR268o1hLql9C+Xvyxf3TV2AwtJ4hi28cx1pE6jGojdxJmQrr/mS83h5ntmSy1RLqvhmyBIoreJg==",
   "success": true,
-  "projectFilePath": "D:\\Testiranje projekti\\proj1\\projekat1\\projekat1.csproj",
+  "projectFilePath": "D:\\TestiranjeGIT\\TesitranjeIKvalitetSW\\backend\\proj1\\projekat1\\projekat1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",

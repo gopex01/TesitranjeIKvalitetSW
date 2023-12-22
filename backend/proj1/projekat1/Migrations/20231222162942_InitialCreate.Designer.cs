@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace projekat1.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231221164711_InitialCreate")]
+    [Migration("20231222162942_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,8 +33,26 @@ namespace projekat1.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Email")
                         .HasColumnType("text");
+
+                    b.Property<string>("JMBG")
+                        .HasColumnType("text");
+
+                    b.Property<string>("NameAndSurname")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("Verified")
+                        .HasColumnType("boolean");
 
                     b.HasKey("Id");
 

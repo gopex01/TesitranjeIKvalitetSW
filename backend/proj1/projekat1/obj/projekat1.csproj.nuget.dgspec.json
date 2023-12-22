@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Testiranje projekti\\proj1\\projekat1\\projekat1.csproj": {}
+    "D:\\TestiranjeGIT\\TesitranjeIKvalitetSW\\backend\\proj1\\projekat1\\projekat1.csproj": {}
   },
   "projects": {
-    "D:\\Testiranje projekti\\proj1\\projekat1\\projekat1.csproj": {
+    "D:\\TestiranjeGIT\\TesitranjeIKvalitetSW\\backend\\proj1\\projekat1\\projekat1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Testiranje projekti\\proj1\\projekat1\\projekat1.csproj",
+        "projectUniqueName": "D:\\TestiranjeGIT\\TesitranjeIKvalitetSW\\backend\\proj1\\projekat1\\projekat1.csproj",
         "projectName": "projekat1",
-        "projectPath": "D:\\Testiranje projekti\\proj1\\projekat1\\projekat1.csproj",
+        "projectPath": "D:\\TestiranjeGIT\\TesitranjeIKvalitetSW\\backend\\proj1\\projekat1\\projekat1.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\Testiranje projekti\\proj1\\projekat1\\obj\\",
+        "outputPath": "D:\\TestiranjeGIT\\TesitranjeIKvalitetSW\\backend\\proj1\\projekat1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

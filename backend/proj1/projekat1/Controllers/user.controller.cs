@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 
 namespace projekat1.Controllers;
 
@@ -18,5 +19,21 @@ public class UserEntityConttoller : ControllerBase
    {
         var result=userService.createUser(newUser);
         return Ok(result);
+   }
+
+   [HttpGet]
+   [Route("getUser/{username}")]
+   public ActionResult<UserEntity?> getUser([FromRoute] string username)
+   {
+     var result=userService.getUser(username);
+     return Ok(result);
+   }
+
+   [HttpGet]
+   [Route("getAllUsers")]
+   public ActionResult<UserEntity[]?>getAllUsers()
+   {
+     var result=userService.getAllUsers();
+     return Ok(result);
    }
 }

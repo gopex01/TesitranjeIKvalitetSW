@@ -1229,11 +1229,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Testiranje projekti\\proj1\\projekat1\\projekat1.csproj",
+      "projectUniqueName": "d:\\TestiranjeGIT\\TesitranjeIKvalitetSW\\backend\\proj1\\projekat1\\projekat1.csproj",
       "projectName": "projekat1",
-      "projectPath": "d:\\Testiranje projekti\\proj1\\projekat1\\projekat1.csproj",
+      "projectPath": "d:\\TestiranjeGIT\\TesitranjeIKvalitetSW\\backend\\proj1\\projekat1\\projekat1.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "d:\\Testiranje projekti\\proj1\\projekat1\\obj\\",
+      "outputPath": "d:\\TestiranjeGIT\\TesitranjeIKvalitetSW\\backend\\proj1\\projekat1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
