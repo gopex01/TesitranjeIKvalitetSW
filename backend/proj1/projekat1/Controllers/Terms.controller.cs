@@ -15,10 +15,10 @@ public class TermEntityController:ControllerBase
 
 
     [HttpPost]
-    [Route("addTermin/{username}")]
-    public ActionResult<string> addTerm([FromBody] TermEntity newTerm, [FromRoute] string username)
+    [Route("addTermin/{username}/{bcname}")]
+    public ActionResult<string> addTerm([FromBody] TermEntity newTerm, [FromRoute] string username,[FromRoute] string bcname)
     {
-        var result= terminService.createTermin(newTerm,username);
+        var result= terminService.createTermin(newTerm,username,bcname);
         return Ok(result);
     }
 }

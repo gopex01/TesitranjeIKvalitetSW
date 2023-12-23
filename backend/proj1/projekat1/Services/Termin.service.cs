@@ -12,12 +12,15 @@ public class TerminService
     }
 
 
-    public string? createTermin(TermEntity newTermin, string username)
+    public string? createTermin(TermEntity newTermin, string username,string bcname)
     {
         try{
             var user=dbContext.Users.SingleOrDefault(user=>user.Username==username);
-           user.listOfTerms??=new List<TermEntity>();
-           user.listOfTerms.Add(newTermin);
+            var bc=dbContext.CrossBorders.SingleOrDefault(bc=>bc.Name==bcname);
+            user.listOfTerms??=new List<TermEntity>();
+            user.listOfTerms.Add(newTermin);
+            bc.listOfTerms??=new List<TermEntity>();
+            bc.listOfTerms.Add(newTermin);
 
 
            

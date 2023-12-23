@@ -27,5 +27,8 @@ using System.ComponentModel.DataAnnotations.Schema;
         public bool Accepted { get; set; }
 
        public UserEntity? user{get; set;}
+       public BorderCrossEntity? borderCross{get;set;}
+
+       public ICollection<NotificationEntity>? listOfNotifications{get;set;}
 
     }

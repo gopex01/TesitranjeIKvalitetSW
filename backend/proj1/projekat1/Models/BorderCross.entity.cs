@@ -25,7 +25,7 @@ using System.ComponentModel.DataAnnotations.Schema;
         public string PhoneNumber { get; set; }
         public string Description { get; set; }
         
-
+        public ICollection<TermEntity>? listOfTerms{get;set;}
       
     }
 

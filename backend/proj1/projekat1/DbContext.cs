@@ -9,5 +9,7 @@ public class AppDbContext:DbContext
     public DbSet<BorderCrossEntity> CrossBorders { get; set; }
 
     public DbSet<TermEntity> Terms {get; set;}
+    public DbSet<AdminEntity>Admin{get;set;}
+    public DbSet<NotificationEntity> Notifications{get;set;}
 
 }
