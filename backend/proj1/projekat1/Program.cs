@@ -16,6 +16,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 //builder.Services.AddIdentity<UserEntity,IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<BorderCrossService>();
+builder.Services.AddScoped<TerminService>();
 
 var app = builder.Build();
 

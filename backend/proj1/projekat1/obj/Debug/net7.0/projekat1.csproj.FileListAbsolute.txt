@@ -78,3 +78,43 @@ D:\TestiranjeGIT\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\
 D:\TestiranjeGIT\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\projekat1.pdb
 D:\TestiranjeGIT\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\projekat1.genruntimeconfig.cache
 D:\TestiranjeGIT\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\ref\projekat1.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\appsettings.Development.json
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\appsettings.json
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\projekat1.exe
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\projekat1.deps.json
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\projekat1.runtimeconfig.json
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\projekat1.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\projekat1.pdb
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\Humanizer.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\Npgsql.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\projekat1.csproj.AssemblyReference.cache
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\projekat1.GeneratedMSBuildEditorConfig.editorconfig
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\projekat1.AssemblyInfoInputs.cache
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\projekat1.AssemblyInfo.cs
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\projekat1.csproj.CoreCompileInputs.cache
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\projekat1.MvcApplicationPartsAssemblyInfo.cs
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\projekat1.MvcApplicationPartsAssemblyInfo.cache
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\staticwebassets\msbuild.projekat1.Microsoft.AspNetCore.StaticWebAssets.props
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\staticwebassets\msbuild.build.projekat1.props
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.projekat1.props
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.projekat1.props
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\staticwebassets.pack.json
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\staticwebassets.build.json
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\staticwebassets.development.json
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\scopedcss\bundle\projekat1.styles.css
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\projekat1.csproj.CopyComplete
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\projekat1.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\refint\projekat1.dll
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\projekat1.pdb
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\projekat1.genruntimeconfig.cache
+C:\FAX\7. SEMESTAR\TESTIRANJE\TesitranjeIKvalitetSW\backend\proj1\projekat1\obj\Debug\net7.0\ref\projekat1.dll
