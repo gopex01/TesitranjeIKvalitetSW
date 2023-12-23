@@ -14,4 +14,7 @@ public class UserEntity{
     public string? JMBG{get;set;}
     public bool Verified{get;set;}=false;
 
+
+    public ICollection<TermEntity>? listOfTerms{get; set;}
+
 }
