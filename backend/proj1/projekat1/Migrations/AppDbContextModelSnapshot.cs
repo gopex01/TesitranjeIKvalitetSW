@@ -125,7 +125,7 @@ namespace projekat1.Migrations
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("date")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
 
@@ -156,7 +156,7 @@ namespace projekat1.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("DateAndTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Irregularities")
                         .IsRequired()

@@ -43,4 +43,12 @@ public class TermEntityController:ControllerBase
         var result=terminService.GetPersonalTermsAsync(username);
         return Ok(result);
     }
+
+    [HttpGet]
+    [Route("getAllTerms")]
+    public async Task<ActionResult> getAllTerms()
+    {
+        var result = await terminService.getAllTerms();
+        return Ok(result);
+    }
 }
