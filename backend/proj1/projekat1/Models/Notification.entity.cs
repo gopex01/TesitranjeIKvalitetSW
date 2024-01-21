@@ -9,7 +9,7 @@ public class NotificationEntity{
     public int Id{get;set;}
     public string Content{get;set;}
     public bool IsRead{get;set;}=false;
-    //public DateAndTime date{get;set;}
+    public DateTime date{get;set;}
 
     public UserEntity? User{get;set;}
     public TermEntity? Term{get;set;}

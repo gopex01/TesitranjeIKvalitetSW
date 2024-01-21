@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace projekat1.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231223144123_InitialCreate")]
+    [Migration("20240121150455_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,6 +22,27 @@ namespace projekat1.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("AdminEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Admin");
+                });
 
             modelBuilder.Entity("BorderCrossEntity", b =>
                 {
@@ -84,6 +105,39 @@ namespace projekat1.Migrations
                     b.ToTable("CrossBorders");
                 });
 
+            modelBuilder.Entity("NotificationEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("boolean");
+
+                    b.Property<int?>("TermId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TermId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Notifications");
+                });
+
             modelBuilder.Entity("TermEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -103,9 +157,8 @@ namespace projekat1.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("DateAndTime")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<DateTime?>("DateAndTime")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Irregularities")
                         .IsRequired()
@@ -186,6 +239,21 @@ namespace projekat1.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("NotificationEntity", b =>
+                {
+                    b.HasOne("TermEntity", "Term")
+                        .WithMany("listOfNotifications")
+                        .HasForeignKey("TermId");
+
+                    b.HasOne("UserEntity", "User")
+                        .WithMany("listOfNotifications")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Term");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("TermEntity", b =>
                 {
                     b.HasOne("BorderCrossEntity", "borderCross")
@@ -206,8 +274,15 @@ namespace projekat1.Migrations
                     b.Navigation("listOfTerms");
                 });
 
+            modelBuilder.Entity("TermEntity", b =>
+                {
+                    b.Navigation("listOfNotifications");
+                });
+
             modelBuilder.Entity("UserEntity", b =>
                 {
+                    b.Navigation("listOfNotifications");
+
                     b.Navigation("listOfTerms");
                 });
 #pragma warning restore 612, 618

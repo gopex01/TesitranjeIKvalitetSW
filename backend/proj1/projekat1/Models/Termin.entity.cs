@@ -11,15 +11,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
         public int NumOfPassengers { get; set; }
 
-        // [Column(TypeName = "jsonb")]
-        // public string PassangerList { get; set; } 
-
         public string CarBrand { get; set; }
         public string NumOfRegistrationPlates { get; set; }
         public string ChassisNumber { get; set; }
         public int NumberOfDays { get; set; }
         public string PlaceOfResidence { get; set; }
-        public string DateAndTime { get; set; }
+        public DateTime? DateAndTime { get; set; }
+
         public bool IsPaid { get; set; }
         public bool IsCrossed { get; set; }
         public bool IsComeBack { get; set; }

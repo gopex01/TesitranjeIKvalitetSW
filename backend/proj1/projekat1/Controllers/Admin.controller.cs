@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
-[Route("[controller]/admin")]
+[Route("[controller]/Admin")]
 public class AdminEntityController:ControllerBase
 {
     private readonly AdminService adminService;

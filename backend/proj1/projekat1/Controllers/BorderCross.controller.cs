@@ -14,7 +14,7 @@ public class BorderCrossEntityController: ControllerBase
     }
 
     [HttpPost]
-    [Route("addBorderCross")]
+    [Route("addBC")]
     public ActionResult<string> addBorderCross([FromBody] BorderCrossEntity newBC)
     {
         var result= BCService.createBorderCross(newBC);
@@ -38,6 +38,28 @@ public class BorderCrossEntityController: ControllerBase
         var result= BCService.getALLBCS();
         return Ok(result);
 
+    }
+    [HttpGet]
+    [Route("getOneBC/{username}")]
+    public ActionResult<BorderCrossEntity?>getOneBC([FromRoute]string username)
+    {
+        var result=BCService.getOneBC(username);
+        return Ok(result);
+    }
+    [HttpGet]
+    [Route("getNumOfBC")]
+    public ActionResult<int>getNumOfBC()
+    {
+        var result=BCService.getNumOfBC();
+        return Ok(result);
+    }
+
+    [HttpDelete]
+    [Route("deleteBC/{name}")]
+    public ActionResult<string>deleteBC([FromRoute]string name)
+    {
+        var result=BCService.deleteBC(name);
+        return Ok(result);
     }
 
 

@@ -46,4 +46,113 @@ public class UserService{
             return null;
         }
     }
+    public string updatePassword(string newPassword,string username)
+    {
+        try{
+            var user=dbContext.Users.SingleOrDefault(user=>user.Username==username);
+            if(user!=null)
+            {
+                user.Password=newPassword;
+                dbContext.Users.Update(user);
+                dbContext.SaveChanges();
+                return "Success";
+            }
+            else{
+                return "Error";
+            }
+        }
+        catch(Exception ex)
+        {
+               return ex.Message;
+        }
+    }
+    public string deactivateAccount(string username,string password)
+    {
+        try{
+            var user=dbContext.Users.SingleOrDefault(user=>user.Username==username);
+            if(user!=null)
+            {
+                if(user.Password==password){
+                    dbContext.Users.Remove(user);
+                    dbContext.SaveChanges();
+                    return "Success";
+                }
+                else{
+                    return "Error";
+                }
+            }
+            else{
+                return "Error";
+            }
+        }
+        catch(Exception ex)
+        {
+            return ex.Message;
+        }
+    }
+    public string updatePhoneNumber(string newPhoneNumber,string username )
+    {
+        try{
+            var user=dbContext.Users.SingleOrDefault(user=>user.Username==username);
+            if(user!=null)
+            {
+                user.PhoneNumber=newPhoneNumber;
+                dbContext.Users.Update(user);
+                dbContext.SaveChanges();
+                return "Success";
+            }
+            else{
+                return "Error";
+            }
+        }
+        catch(Exception ex)
+        {
+            return ex.Message;
+        }
+    }
+    public string updateUsername(string newUsername,string username)
+    {
+        try{
+            var user=dbContext.Users.SingleOrDefault(user=>user.Username==username);
+            if(user!=null)
+            {
+                user.Username=newUsername;
+                dbContext.Users.Update(user);
+                dbContext.SaveChanges();
+                return "Success";
+            }
+            else{
+                return "Error";
+            }
+        }
+        catch(Exception ex)
+        {
+            return ex.Message;
+        }
+    }
+    public string updateName(string newName,string username)
+    {
+         try{
+            var user=dbContext.Users.SingleOrDefault(user=>user.Username==username);
+            if(user!=null)
+            {
+                user.NameAndSurname=newName;
+                dbContext.Users.Update(user);
+                dbContext.SaveChanges();
+                return "Success";
+            }
+            else{
+                return "Error";
+            }
+        }
+        catch(Exception ex)
+        {
+            return ex.Message;
+        }
+    }
+    public int getNumOfUsers()
+    {
+        int arrUsers=dbContext.Users.ToArray().Length;
+        return arrUsers;
+    }
 }

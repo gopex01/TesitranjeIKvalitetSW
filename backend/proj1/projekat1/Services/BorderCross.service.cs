@@ -1,3 +1,6 @@
+using System.Collections.Specialized;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+
 public class BorderCrossService
 {
 
@@ -49,6 +52,56 @@ public class BorderCrossService
         catch(Exception ex)
         {
             return null;
+        }
+    }
+    public BorderCrossEntity? getOneBC(string username)
+    {
+        try{
+            var bc=dbContext.CrossBorders.SingleOrDefault(bc=>bc.Username==username);
+            if(bc!=null)
+            {
+                return bc;
+            }
+            else{
+                return null;
+            }
+        }
+        catch(Exception ex)
+        {
+            return null;
+        }
+    }
+    public BorderCrossEntity? getBCByName(string name)
+    {
+        try{
+            var bc=dbContext.CrossBorders.SingleOrDefault(bc=>bc.Name==name);
+            if(bc!=null){
+            return bc;
+            }
+            else{
+                return null;
+            }
+        }
+        catch(Exception ex)
+        {
+            return null;
+        }
+    }
+    public int getNumOfBC()
+    {
+        int arrBC=dbContext.CrossBorders.ToArray().Length;
+        return arrBC;
+    }
+    public string deleteBC(string name)
+    {
+        var bc=dbContext.CrossBorders.SingleOrDefault(bc=>bc.Name==name);
+        if(bc==null){
+            return "Error";
+        }
+        else{
+            dbContext.CrossBorders.Remove(bc);
+            dbContext.SaveChanges();
+            return "Success";
         }
     }
 

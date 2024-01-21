@@ -1,0 +1,11 @@
+
+<div class="card">
+    <div class="text">
+        <p class="bold-text">Message:</p>
+        <p>{{notification?.content}}</p>
+        <p><span class="bold-text">Date And Time:</span>{{notification?.dateAndTime}}</p>
+    </div>
+    <button (click)="markAsRead()">Mark as read</button>
+    <button (click)="acceptTerm()">Accept</button>
+    <button (click)="declineTerm()">Decline</button>
+</div>
