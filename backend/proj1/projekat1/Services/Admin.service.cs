@@ -9,9 +9,17 @@ public class AdminService{
     public string createAdmin(AdminEntity newAdmin)
     {
         try{
-            dbContext.Admin.Add(newAdmin);
-            dbContext.SaveChanges();
-            return "Admin uspesno dodat";
+            var adminExist = this.getAdmin(newAdmin.Username);
+            if (adminExist == null)
+            {
+                dbContext.Admin.Add(newAdmin);
+                dbContext.SaveChanges();
+                return "Admin uspesno dodat";
+            }
+            else
+            {
+                return "Admin vec postoji";
+            }
         }
         catch(Exception ex)
         {

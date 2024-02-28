@@ -22,14 +22,6 @@ public class BorderCrossEntityController: ControllerBase
     }
 
 
-    [HttpGet]
-    [Route("getBorderCross/{name}")]
-    public ActionResult<BorderCrossEntity?> getBorderCross([FromRoute] string name)
-    {
-        var result= BCService.getBorderCross(name);
-        return Ok(result);
-
-    }
 
     [HttpGet]
     [Route("getALLBCS")]

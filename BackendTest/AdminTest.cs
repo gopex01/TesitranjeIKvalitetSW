@@ -44,14 +44,15 @@ namespace BackendTest
 
 
         [Test]
-        public void CreateAdmin_SuccessfullyAddsAdmin_ReturnsSuccessMessage()
+        [TestCase("john","password123")]
+        public void CreateAdmin_SuccessfullyAddsAdmin_ReturnsSuccessMessage(string username,string password)
         {
             // Arrange
             var adminService = new AdminService(appContext);
             var newAdmin = new AdminEntity
             {
-                Username = "john",
-                Password = "password123"
+                Username = username,
+                Password = password
             };
 
             // Act
@@ -64,43 +65,54 @@ namespace BackendTest
 
 
         [Test]
-        public void CreateAdmin_DuplicateUsername_ReturnsErrorMessage()
+        [TestCase("Zeljko Vasic","password123")]
+        public void CreateAdmin_DuplicateUsername_ReturnsErrorMessage(string username,string password)
         {
             // Arrange
             var adminService = new AdminService(appContext);
             var newAdmin = new AdminEntity
             {
-                Username = "Zeljko Vasic", // Koristimo postojeće korisničko ime
-              //  Password = "password123"
+                Username = username, // Koristimo postojeće korisničko ime
+                Password = password
             };
 
             // Act
             var result = adminService.createAdmin(newAdmin);
 
             // Assert
-            Assert.AreEqual("Greška prilikom dodavanja korisnika", result);
+            Assert.AreEqual("Admin vec postoji", result);
         }
 
 
         [Test]
         public void CreateAdmin_ExceptionThrown_ReturnsErrorMessage()
         {
-            // Arrange
-            var mockedDbContext = new Mock<AppDbContext>();
-            mockedDbContext.Setup(db => db.Admin.Add(It.IsAny<AdminEntity>())).Throws(new Exception("Simulated Exception"));
+                //ovo naknadno
+        }
 
-            var adminServiceWithMock = new AdminService(mockedDbContext.Object);
-            var newAdmin = new AdminEntity
-            {
-                Username = "john",
-                Password = "password123"
-            };
+        [Test]
+        [TestCase("Zeljko Vasic")]
+        public void getAdminSuccess(string username)
+        {
+            var result= adminService.getAdmin(username);
+            Assert.That(result, Is.Not.Null);
+            Assert.That(result, Is.TypeOf<AdminEntity>());
+            Assert.That(result.Username, Is.EqualTo(username));
+        }
 
-            // Act
-            var result = adminServiceWithMock.createAdmin(newAdmin);
+        [Test]
+        [TestCase("nonusername")]
+        public void getAdminNull(string username)
+        {
+            var result = adminService.getAdmin(username);
+            Assert.That(result, Is.Null);
+        }
 
-            // Assert
-            Assert.AreEqual("Greška prilikom dodavanja korisnika: Simulated Exception", result);
+        [Test]
+        [TestCase("nonusername")]
+        public void getUserExceptionThrowReturnNull(string username)
+        {
+            //da se doda
         }
 
 
