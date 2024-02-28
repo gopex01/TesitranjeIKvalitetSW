@@ -37,7 +37,7 @@ namespace BackendTest
 
         [Test]
         [TestCase("John Doe", "john@example.com","john", "password", "123456789", 25, "12309521101")]
-        public void CreateUser_WhenUserAdded_ReturnsSuccessMessage(string NameAndSurname, string email, string username,string password, string phonenumber, int age, string jmbg)
+        public void CreateUserSuccessMessage(string NameAndSurname, string email, string username,string password, string phonenumber, int age, string jmbg)
         {
             // Arrange
             var newUser = new UserEntity
@@ -57,7 +57,7 @@ namespace BackendTest
             Assert.That(result, Is.Not.Null);
 
             Assert.AreEqual("Korisnik uspesno dodat", result);
-            Assert.AreEqual(2, appContext.Users.Count());
+            Assert.AreEqual(4, appContext.Users.Count());
         }
         [Test]
         [TestCase("zeks")]
@@ -118,7 +118,238 @@ namespace BackendTest
         public void getUsersExceptionThrowReturnNull()
         {
 
+       
+
         }
+
+
+        [Test]
+        public void getNumOfUsers()
+        {
+            // Act
+            var result = userService.getNumOfUsers();
+            Assert.AreEqual(3, result);
+
+        }
+
+
+        [Test]
+        public void getNumOfUsersWhenDatabaseIsEmpty()
+        {
+            //prvo se uklone useri iz baze
+
+            appContext.Users.RemoveRange(appContext.Users);
+            appContext.SaveChanges();
+
+            var result = userService.getNumOfUsers();
+           
+            Assert.AreEqual(result, 0);
+        }
+
+
+
+
+
+        [Test]
+        [TestCase("newPassword", "zeks")]
+        public void UpdatePasswordToExistingUser(string newPassword, string username)
+        {
+            
+
+            // Act
+            var result = userService.updatePassword(newPassword, username);
+
+            var user = userService.getUser(username);
+
+            // Assert
+            Assert.That(result, Is.Not.Null);
+
+            Assert.AreEqual("Success", result);
+
+            Assert.AreEqual(user.Password, newPassword);
+        }
+
+
+
+
+        [Test]
+        [TestCase("newPassword", "nonExisstringPassword")]
+        public void UpdatePasswordNonExistingUser(string newPassword, string username)
+        {
+            
+
+            // Act
+            var result = userService.updatePassword(newPassword, username);
+
+            // Assert
+            Assert.AreEqual("Error", result);
+
+
+        }
+
+
+        [Test]
+        public void UpdatePassword_ExceptionThrown_ReturnsErrorMessage()
+        {
+
+
+        }
+
+
+
+        [Test]
+        public void DeactivateAccountValid()
+        {
+            
+            string username = "zeks";
+            string password = "zeljko";
+
+            // Act
+            var result = userService.deactivateAccount(username, password);
+
+            // Assert
+            Assert.AreEqual("Success", result);
+        }
+
+
+        [Test]
+        public void DeactivateAccountInvalidPassword()
+        {
+            
+            string username = "zeks";
+            string password = "invalidPassword";
+
+            // Act
+            var result = userService.deactivateAccount(username, password);
+
+            // Assert
+            Assert.AreEqual("Error", result);
+        }
+
+
+        [Test]
+        public void DeactivateAccount_NonexistentUser_ReturnsError()
+        {
+            
+            string username = "nonexistentUser";
+            string password = "password";
+
+            // Act
+            var result = userService.deactivateAccount(username, password);
+
+            // Assert
+            Assert.AreEqual("Error", result);
+        }
+
+
+
+
+
+
+        //UPDATEPHONENUMBER
+        [Test]
+        [TestCase("065123456", "zeks")]
+        public void UpdatePhoneNumberExistingUser(string newPhoneNumber, string username)
+        {
+            var result = userService.updatePhoneNumber(newPhoneNumber, username);
+            Assert.AreEqual("Success", result);
+        }
+
+
+        [Test]
+        [TestCase("065123456", "nonexistentUser")]
+        public void UpdatePhoneNumber_NonexistentUser_ReturnsError(string newPhoneNumber, string username)
+        {
+            var result = userService.updatePhoneNumber(newPhoneNumber, username);
+            Assert.AreEqual("Error", result);
+        }
+
+        [Test]
+        public void UpdatePhoneNumber_ExceptionThrown_ReturnsErrorMessage()
+        {
+           
+        }
+
+
+        //updateUsername
+
+        [Test]
+        [TestCase("newUsername", "zeks")]
+        public void UpdateUsername_ExistingUser_ReturnsSuccess(string newUsername, string username)
+        {
+            // Act
+            var result = userService.updateUsername(newUsername, username);
+            // Assert
+            Assert.AreEqual("Success", result);
+        }
+
+
+        [Test]
+        [TestCase("newUsername", "nonexistentUser")]
+        public void UpdateUsername_NonexistentUser_ReturnsError(string newUsername, string username)
+        {
+           
+
+            // Act
+            var result = userService.updateUsername(newUsername, username);
+
+            // Assert
+            Assert.AreEqual("Error", result);
+        }
+
+
+        [Test]
+        public void UpdateUsername_ExceptionThrown_ReturnsErrorMessage()
+        {
+           
+        }
+
+
+
+        //UPDATENAME
+
+        [Test]
+        [TestCase("New Name", "zeks")]
+        public void UpdateName_ExistingUser_ReturnsSuccess(string newName, string username)
+        {
+            // Arrange
+            var userService = new UserService(appContext);
+
+            // Act
+            var result = userService.updateName(newName, username);
+
+            // Assert
+            Assert.AreEqual("Success", result);
+        }
+
+
+
+        [Test]
+        [TestCase("New Name", "nonexistentUser")]
+        public void UpdateName_NonexistentUser_ReturnsError(string newName, string username)
+        {
+            // Arrange
+            var userService = new UserService(appContext);
+
+            // Act
+            var result = userService.updateName(newName, username);
+
+            // Assert
+            Assert.AreEqual("Error", result);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

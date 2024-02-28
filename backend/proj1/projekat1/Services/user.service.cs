@@ -150,9 +150,18 @@ public class UserService{
             return ex.Message;
         }
     }
+
+
+
     public int getNumOfUsers()
     {
         int arrUsers=dbContext.Users.ToArray().Length;
         return arrUsers;
     }
+
+
+
+
+
+
 }
