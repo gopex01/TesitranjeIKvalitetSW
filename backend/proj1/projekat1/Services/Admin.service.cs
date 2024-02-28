@@ -15,7 +15,7 @@ public class AdminService{
         }
         catch(Exception ex)
         {
-            return $"Greška prilikom dodavanja korisnika: {ex.Message}";
+            return $"Greška prilikom dodavanja korisnika ${ex.Message}";
         }
     }
     public AdminEntity? getAdmin(string username)

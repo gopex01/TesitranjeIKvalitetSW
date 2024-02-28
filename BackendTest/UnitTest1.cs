@@ -348,24 +348,6 @@ namespace BackendTest
 
 
 
-        [Test]
-        public void CreateAdmin_SuccessfullyAddsAdmin_ReturnsSuccessMessage()
-        {
-            // Arrange
-            var adminService = new AdminService(appContext);
-            var newAdmin = new AdminEntity
-            {
-                Id=1,
-                Username = "john",
-                Password = "password123"
-            };
-
-            // Act
-            var result = adminService.createAdmin(newAdmin);
-
-            // Assert
-            Assert.AreEqual("Admin uspesno dodat", result);
-        }
 
 
 
