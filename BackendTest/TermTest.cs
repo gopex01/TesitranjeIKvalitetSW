@@ -59,18 +59,106 @@ namespace BackendTest
             borderCrossService = new BorderCrossService(appContext);
             terminService=new TerminService(appContext,borderCrossService,userService);
         }
+
+
         [Test]
-        [TestCase()]
-        public void addTerminSuccess()
+        [TestCase(1, "bmw", "024EL", "123dasd", 5, "asd", false, true, true, "nema", true)]
+        public async Task addTerminSuccess(int numOfPassenger, string CarBrand, string NumOfRegistrationPlates, string ChassisNumber, int NumberOfDays, string placeOfResidence,
+     bool isPaid, bool isCrossed, bool isComeBack, string irregularities, bool Accepted)
         {
+            DateTime dateAndTime = DateTime.MinValue; // Možete koristiti DateTime.MinValue, DateTime.MaxValue ili bilo koju drugu konstantu koja odgovara vašim potrebama u testiranju.
+
+            // Testiranje logike metode addTerminSuccess
+            var newTerm = new TermEntity
+            {
+                 NumOfPassengers = numOfPassenger,
+                 CarBrand= CarBrand,
+                 NumOfRegistrationPlates= NumOfRegistrationPlates,
+                 ChassisNumber = ChassisNumber,
+                 NumberOfDays= NumberOfDays,
+                 DateAndTime=dateAndTime,
+                 PlaceOfResidence = placeOfResidence,
+                 IsPaid= isPaid,
+                 IsCrossed=isCrossed,
+                 IsComeBack=isComeBack,
+                 Irregularities=irregularities,
+                 Accepted=Accepted
+
+            };
+
+            var rez =  await terminService.createTermin(newTerm,"zeks", "Gradina");
+            Assert.That(rez,Is.Not.Null);
+            Assert.AreEqual(rez, "Success");
+
 
         }
+
         [Test]
-        [TestCase()]
-        public void addTerminFail()
+        [TestCase(1, "bmw", "024EL", "123dasd", 5, "asd", false, true, true, "nema", true)]
+        public async Task AddTerminBadUsername(int numOfPassenger, string CarBrand, string NumOfRegistrationPlates, string ChassisNumber, int NumberOfDays, string placeOfResidence,
+        bool isPaid, bool isCrossed, bool isComeBack, string irregularities, bool Accepted)
         {
+            DateTime dateAndTime = DateTime.MinValue; // Možete koristiti DateTime.MinValue, DateTime.MaxValue ili bilo koju drugu konstantu koja odgovara vašim potrebama u testiranju.
+
+            // Testiranje logike metode addTerminSuccess
+            var newTerm = new TermEntity
+            {
+                NumOfPassengers = numOfPassenger,
+                CarBrand = CarBrand,
+                NumOfRegistrationPlates = NumOfRegistrationPlates,
+                ChassisNumber = ChassisNumber,
+                NumberOfDays = NumberOfDays,
+                DateAndTime = dateAndTime,
+                PlaceOfResidence = placeOfResidence,
+                IsPaid = isPaid,
+                IsCrossed = isCrossed,
+                IsComeBack = isComeBack,
+                Irregularities = irregularities,
+                Accepted = Accepted
+
+            };
+
+            var rez = await terminService.createTermin(newTerm, "NevalidUsername", "Gradina");
+            Assert.That(rez, Is.Not.Null);
+            Assert.AreEqual(rez, "Error");
+
 
         }
+
+        [Test]
+        [TestCase(1, "bmw", "024EL", "123dasd", 5, "asd", false, true, true, "nema", true)]
+        public async Task AddTerminBadBorderCross(int numOfPassenger, string CarBrand, string NumOfRegistrationPlates, string ChassisNumber, int NumberOfDays, string placeOfResidence,
+      bool isPaid, bool isCrossed, bool isComeBack, string irregularities, bool Accepted)
+        {
+            DateTime dateAndTime = DateTime.MinValue; // Možete koristiti DateTime.MinValue, DateTime.MaxValue ili bilo koju drugu konstantu koja odgovara vašim potrebama u testiranju.
+
+            // Testiranje logike metode addTerminSuccess
+            var newTerm = new TermEntity
+            {
+                NumOfPassengers = numOfPassenger,
+                CarBrand = CarBrand,
+                NumOfRegistrationPlates = NumOfRegistrationPlates,
+                ChassisNumber = ChassisNumber,
+                NumberOfDays = NumberOfDays,
+                DateAndTime = dateAndTime,
+                PlaceOfResidence = placeOfResidence,
+                IsPaid = isPaid,
+                IsCrossed = isCrossed,
+                IsComeBack = isComeBack,
+                Irregularities = irregularities,
+                Accepted = Accepted
+
+            };
+
+            var rez = await terminService.createTermin(newTerm, "zeks", "NevalidBorderCross");
+            Assert.That(rez, Is.Not.Null);
+            Assert.AreEqual(rez, "Error");
+
+
+        }
+
+
+
         [Test]
         [TestCase()]
         public void addTerminThrowException()
@@ -109,6 +197,13 @@ namespace BackendTest
         public void getNumOfTermsWhenDatabaseIsEmpty()
         {
 
+
+            appContext.Terms.RemoveRange(appContext.Terms);
+            appContext.SaveChanges();
+
+            var result = terminService.getNumOfTerms();
+            Assert.AreEqual( result,0);
+
         }
 
         [Test]
@@ -117,16 +212,23 @@ namespace BackendTest
 
         }
 
+
+
         [Test]
-        [TestCase()]
-        public void getPersonalTermsSuccess()
+        [TestCase("zeks")]
+        public  async Task getPersonalTermsSuccess(string username)
+        {
+            var result = await terminService.GetPersonalTermsAsync(username);
+            Assert.That(result, Is.Not.Null);
+        }
+
+        [Test]
+        [TestCase("zeks1")]
+        public async Task getPersonalTermsFail(string username)
         {
 
-        }
-        [Test]
-        [TestCase()]
-        public void getPersonalTermsFail()
-        {
+            var result = await terminService.GetPersonalTermsAsync(username);
+            Assert.That(result, Is.Null);
 
         }
         [Test]
