@@ -44,11 +44,4 @@ public class TermEntityController:ControllerBase
         return Ok(result);
     }
 
-    [HttpGet]
-    [Route("getAllTerms")]
-    public async Task<ActionResult> getAllTerms()
-    {
-        var result = await terminService.getAllTerms();
-        return Ok(result);
-    }
 }

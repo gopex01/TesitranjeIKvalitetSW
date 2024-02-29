@@ -1,0 +1,136 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Moq;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BackendTest
+{
+    [TestFixture]
+    public class TermTest
+    {
+        private AppDbContext appContext;
+        private TerminService terminService;
+        private BorderCrossService borderCrossService;
+        private UserService userService;
+
+        [SetUp]
+        public void Setup()
+        {
+            var options = new DbContextOptionsBuilder<AppDbContext>()
+               .UseInMemoryDatabase(databaseName: "TestDatabase")
+               .Options;
+
+
+            appContext = new AppDbContext(options);
+            var bcs = new List<BorderCrossEntity>
+            {
+                new BorderCrossEntity{Id=4,Name="Gradina",Username="GradinaGP",Password="Gradina",Location="East",Country="Serbia",Type="transport",WorkHour="00-24H",TransportConnections="transport",Capacity="12",Email="Gradina@gmail.com",PhoneNumber="010292929",Description="nodesc"},
+                new BorderCrossEntity{Id=5,Name="Horgos",Username="HorgosGP",Password="Horgos",Location="North",Country="Serbia",Type="transport",WorkHour="00-24H",TransportConnections="transport",Capacity="12",Email="Horgos@gmail.com",PhoneNumber="010392929",Description="nodesc"},
+                new BorderCrossEntity{Id=6,Name="Batrovci",Username="BatrovciGP",Password="Batrovci",Location="North",Country="Serbia",Type="transport",WorkHour="00-24H",TransportConnections="transport",Capacity="12",Email="Batrovci@gmail.com",PhoneNumber="010592929",Description="nodesc"}
+            };
+            var users = new List<UserEntity>
+            {
+                 new UserEntity{ Id = 4,NameAndSurname="Zeljko Vasic",Email="zeljko@gmail.com",Username="zeks",Password="zeljko",PhoneNumber="064192992",Age=19,JMBG="029102910901"},
+                new UserEntity{Id=5,NameAndSurname="Mihajlo Madic",Email="mihajlo@gmail.com",Username="mixa",Password="mixa",PhoneNumber="065991919",Age=22,JMBG="029292101951"},
+                new UserEntity{Id=6,NameAndSurname="Vladan Vasic",Email="vladan@gmail.com",Username="vaske",Password="vaske",PhoneNumber="064919191",Age=25,JMBG="29201010191"}
+            };
+            var initialData = new List<TermEntity>
+            {
+
+                new TermEntity{ Id = 1,NumOfPassengers=2,CarBrand="Audi",NumOfRegistrationPlates="PI029PP",ChassisNumber="2skoskao92ka",NumberOfDays=4,PlaceOfResidence="Grcka",DateAndTime=new DateTime(),IsPaid=false,IsCrossed=false,IsComeBack=false,Accepted=true,Irregularities="nema",user=users[0],borderCross=bcs[0] },//,user=new UserEntity{Id = 2,NameAndSurname="Zeljko Vasic",Email="zeljko@gmail.com",Username="zeks",Password="zeljko",PhoneNumber="064192992",Age=19,JMBG="029102910901"},borderCross=new BorderCrossEntity{Id=1,Name="Gradina",Username="GradinaGP",Password="Gradina",Location="East",Country="Serbia",Type="transport",WorkHour="00-24H",TransportConnections="transport",Capacity="12",Email="Gradina@gmail.com",PhoneNumber="010292929",Description="nodesc" } },
+                 new TermEntity{ Id = 2,NumOfPassengers=4,CarBrand="VW",NumOfRegistrationPlates="NI029PP",ChassisNumber="OS9Ak92ka",NumberOfDays=5,PlaceOfResidence="Turska",DateAndTime=new DateTime(),IsPaid=false,IsCrossed=false,IsComeBack=false,Accepted=true,Irregularities="nema",user=users[1],borderCross=bcs[1] },//=new UserEntity{Id = 3,NameAndSurname="Zeljko Madic",Email="zeljko@gmail.com",Username="zeks",Password="zeljko",PhoneNumber="064192992",Age=19,JMBG="029102910901"},borderCross=new BorderCrossEntity{Id=2,Name="Horgos",Username="HorgosGP",Password="Gradina",Location="East",Country="Serbia",Type="transport",WorkHour="00-24H",TransportConnections="transport",Capacity="12",Email="Gradina@gmail.com",PhoneNumber="010292929",Description="nodesc" } },
+                  new TermEntity{ Id = 3,NumOfPassengers=5,CarBrand="BMW",NumOfRegistrationPlates="BG029PP",ChassisNumber="2sppsij1o92ka",NumberOfDays=7,PlaceOfResidence="Bugarska",DateAndTime=new DateTime(),IsPaid=false,IsCrossed=false,IsComeBack=false,Accepted=true,Irregularities="nema",user=users[2],borderCross=bcs[2] },//=new UserEntity {Id = 4,NameAndSurname="Zeljko Petric",Email="zeljko@gmail.com",Username="zeks",Password="zeljko",PhoneNumber="064192992",Age=19,JMBG="029102910901" },borderCross=new BorderCrossEntity{Id=3,Name="Batrovci",Username="BatrovciGP",Password="Gradina",Location="East",Country="Serbia",Type="transport",WorkHour="00-24H",TransportConnections="transport",Capacity="12",Email="Gradina@gmail.com",PhoneNumber="010292929",Description="nodesc"} },
+
+            };
+          
+
+
+            appContext.CrossBorders.AddRange(bcs);
+            appContext.SaveChanges();
+            appContext.Users.AddRange(users);
+            appContext.SaveChanges();
+            appContext.Terms.AddRange(initialData);
+            appContext.SaveChanges();
+            userService = new UserService(appContext);
+            borderCrossService = new BorderCrossService(appContext);
+            terminService=new TerminService(appContext,borderCrossService,userService);
+        }
+        [Test]
+        [TestCase()]
+        public void addTerminSuccess()
+        {
+
+        }
+        [Test]
+        [TestCase()]
+        public void addTerminFail()
+        {
+
+        }
+        [Test]
+        [TestCase()]
+        public void addTerminThrowException()
+        {
+
+        }
+
+        [Test]
+        [TestCase("GradinaGP")]
+        public async Task getTermsAsyncSuccess(string username)
+        {
+            var result = await terminService.GetTermsAsync(username);
+            Assert.That(result, Is.Not.Null);
+            Assert.AreEqual(result?.Count(), 1);
+        }
+        [Test]
+        [TestCase("PresevoGP")]
+        public async Task getTermsAsyncNull(string username)
+        {
+            var result = await terminService.GetTermsAsync(username);
+            Assert.That(result, Is.Null);
+        }
+        [Test]
+        [TestCase()]
+        public void getTermsAsyncThrowException()
+        {
+
+        }
+        [Test]
+        public void getNumOfTermsSuccess()
+        {
+            var result=terminService.getNumOfTerms();
+            Assert.AreEqual(result, 3);
+        }
+        [Test]
+        public void getNumOfTermsWhenDatabaseIsEmpty()
+        {
+
+        }
+
+        [Test]
+        public void getNumOfTermsThrowException()
+        {
+
+        }
+
+        [Test]
+        [TestCase()]
+        public void getPersonalTermsSuccess()
+        {
+
+        }
+        [Test]
+        [TestCase()]
+        public void getPersonalTermsFail()
+        {
+
+        }
+        [Test]
+        [TestCase()]
+        public void getPersonalTermsThrowException() { }
+    }
+}

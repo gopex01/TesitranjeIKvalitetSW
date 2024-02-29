@@ -25,38 +25,21 @@ public async Task<string> createTermin(TermEntity newTermin, string username, st
 {
     try
     {
-        DateTime? selectedDate = newTermin.DateAndTime;
-        if (selectedDate.HasValue)
-        {
-            Console.WriteLine(selectedDate.Value);
-            var x = await FindNextAvailableTermAsync(DateTime.Now);
-            Console.Write("Stipendija");
-            Console.WriteLine(x);
-            // DateTime? newDate = DateTime.Now;//;
-            // // // Rad s newDate...
-
-            // // // Postavljanje vremena na UTC pre dodavanja u bazu podataka
-            // newTermin.DateAndTime = DateTime.SpecifyKind(newDate.Value, DateTimeKind.Utc);
-
-            // var user = dbContext.Users.SingleOrDefault(user => user.Username == username);
-            // var bc = dbContext.CrossBorders.SingleOrDefault(bc => bc.Name == bcname);
-            // user.listOfTerms ??= new List<TermEntity>();
-            // user.listOfTerms.Add(newTermin);
-            // bc.listOfTerms ??= new List<TermEntity>();
-            // bc.listOfTerms.Add(newTermin);
-            // newTermin.DateAndTime = newDate;
-            // newTermin.IsComeBack = false;
-            // newTermin.IsComeBack = false;
-            // newTermin.IsPaid = false;
-            // newTermin.Accepted = false;
-            // newTermin.Irregularities = "";
-            // dbContext.Terms.Add(newTermin);
-            // dbContext.SaveChanges();
-            return "Success";
-        }
-        else
+        var user=userService.getUser(username);
+        var bc=bcService.getBCByName(bcname);
+        if(bc==null || user==null)
         {
             return "Error";
+        }
+        else{
+        newTermin.borderCross=bc;
+        newTermin.user=user;
+        newTermin.IsPaid=false;
+        newTermin.IsComeBack=false;
+        newTermin.IsCrossed=false;
+        dbContext.Terms.Add(newTermin);
+        dbContext.SaveChanges();
+        return "Success";
         }
     }
     catch (Exception ex)
@@ -67,60 +50,13 @@ public async Task<string> createTermin(TermEntity newTermin, string username, st
         //return $"Error when adding a border crossing : {ex.Message}";
     }
 }
-
-
-   public async Task<DateTime> FindNextAvailableTermAsync(DateTime selectedDate)
-{
-    if (selectedDate == null)
-    {
-        // Handle the case where selectedDate is null
-        throw new ArgumentNullException(nameof(selectedDate));
-    }
-
-    Console.WriteLine();
-    Console.WriteLine();
-    Console.WriteLine("opsala");
-    selectedDate = new DateTime(selectedDate.Year, selectedDate.Month, selectedDate.Day, 0, 0, 0, 0);
-
-
-    Console.WriteLine();
-    Console.WriteLine();
-    Console.WriteLine("opsala2");
-    var overlappingTerms = await dbContext.Terms
-        .Where(term => term.DateAndTime != null && term.DateAndTime.Value >= selectedDate && term.DateAndTime.Value < selectedDate.AddDays(1))
-        .Select(p => new {
-            DateAndTime= p.DateAndTime!
-        })
-        //.OrderBy(term => term.DateAndTime.Value)
-        .ToListAsync();
-
-    var nextAvailableDate = new DateTime(selectedDate.Ticks);
-
-    Console.WriteLine();
-    Console.WriteLine();
-    Console.WriteLine("op");
-
-    while (overlappingTerms.Any(term => term.DateAndTime != null && term.DateAndTime.Value.Ticks == nextAvailableDate.Ticks))
-    {
-        nextAvailableDate = nextAvailableDate.AddMinutes(30);
-    }
-    Console.WriteLine("opop");
-
-    if (nextAvailableDate.Hour >= 23 && nextAvailableDate.Minute >= 30)
-    {
-        nextAvailableDate = nextAvailableDate.AddDays(1).Date;
-    }
-    Console.WriteLine("opopop");
-
-    return selectedDate;
-}
     public async Task<IEnumerable<TermEntity>?> GetTermsAsync(string username)
     {
         var bc = bcService.getOneBC(username);
-
+        Console.WriteLine(bc);
         var term = await dbContext.CrossBorders
-            .Include(bc => bc.listOfTerms)
-            .Where(bc => bc.Username == username)
+            .Include(b => b.listOfTerms)
+            .Where(b => b.Username == username)
             .FirstOrDefaultAsync();
 
         return term?.listOfTerms?.Where(t => t.Accepted == true);
@@ -138,6 +74,7 @@ public async Task<string> createTermin(TermEntity newTermin, string username, st
         }
     }
 
+
     public async Task<IEnumerable<TermEntity>?> GetPersonalTermsAsync(string username)
 {
     var user =  userService.getUser(username);
@@ -149,17 +86,4 @@ public async Task<string> createTermin(TermEntity newTermin, string username, st
 
     return term?.listOfTerms?.Where(t => t.Accepted == true);
 }
-
-    public async Task<object> getAllTerms()
-    {
-        var selectedDate = DateTime.Now;
-        var overlappingTerms = await dbContext.Terms
-        .Where(term => term.DateAndTime != null && term.DateAndTime.Value >= selectedDate && term.DateAndTime.Value < selectedDate.AddDays(1))
-        .Select(p => new {
-            DateAndTime= p.DateAndTime!
-        })
-        //.OrderBy(term => term.DateAndTime.Value)
-        .ToListAsync();
-        return overlappingTerms;//await dbContext.Terms.Select(p => p).ToListAsync();
-    }
 }
