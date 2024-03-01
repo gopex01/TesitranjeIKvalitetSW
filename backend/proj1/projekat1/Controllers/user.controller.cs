@@ -12,7 +12,13 @@ public class UserEntityConttoller : ControllerBase
    {
         userService=us;
    }
-
+    [HttpGet]
+    [Route("login/{username}/{password}")]
+    public ActionResult<string?> login([FromRoute] string username, [FromRoute] string password)
+    {
+        var result=userService.login(username, password);
+        return Ok(result);
+    }
    [HttpPost]
    [Route("addUser")]
    public ActionResult<string> CreateUser([FromBody] UserEntity newUser)

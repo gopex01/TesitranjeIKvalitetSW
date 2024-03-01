@@ -6,6 +6,56 @@ public class UserService{
     {
         dbContext=dbc;
     }
+    public object? login(string username, string password)
+    {
+        var user = dbContext.Users.FirstOrDefault(user => user.Username == username);
+        if (user == null)
+        {
+            var bc = dbContext.CrossBorders.FirstOrDefault(bc => bc.Username == username);
+            if (bc == null)
+            {
+                var admin = dbContext.Admin.FirstOrDefault(admin => admin.Username == username);
+                if (admin == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    if (admin.Password == password)
+                    {
+                        return new { username= admin.Username,
+                        type="admin"};
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+            else
+            {
+                if (bc.Password == password)
+                {
+                    return  new { username=bc.Username,type="bc"};
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+        else
+        {
+            if (user.Password == password)
+            {
+                return new { username = user.Username, type="user" };
+            }
+            else
+            {
+                return null;
+            }
+        }
+    }
     public string createUser(UserEntity newUser)
     {
         try{
