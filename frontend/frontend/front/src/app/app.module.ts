@@ -11,14 +11,20 @@ import { StoreModule } from '@ngrx/store';
 import { loginReducer } from './ngrx/login.reducer';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { BcProfileComponent } from './bc-profile/bc-profile.component';
-import {StoreDevtoolsModule} from '@ngrx/store-devtools'
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import { CreateTermComponent } from './create-term/create-term.component';
+import { BordercrossComponent } from './bordercross/bordercross.component';
+import { ListBordercrossComponent } from './list-bordercross/list-bordercross.component'
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserProfileComponent,
     AdminProfileComponent,
-    BcProfileComponent
+    BcProfileComponent,
+    CreateTermComponent,
+    BordercrossComponent,
+    ListBordercrossComponent
   ],
   imports: [
     BrowserModule,

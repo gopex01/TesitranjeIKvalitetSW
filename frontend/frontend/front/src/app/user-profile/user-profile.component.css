@@ -1,27 +1,48 @@
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .user-info {
-    margin-top: 20px;
-    text-align: center; /* Centriranje teksta */
-  }
-  
-  .user-info p {
-    margin-bottom: 10px;
-    text-align: left; /* Ponovno postavljanje teksta na lijevu stranu */
-  }
-  
-  .user-info strong {
-    font-weight: bold;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.user-info {
+  grid-column: span 2;
+}
+
+.user-info p {
+  margin-bottom: 10px;
+}
+
+.user-info strong {
+  font-weight: bold;
+}
+
+.user-option {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid azure;
+  justify-content: center;
+  width: 20%;
+}
+
+.user-option button {
+  padding: 10px 20px;
+  width: 50%;
+  margin: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-option button:hover {
+  background-color: #0056b3;
 }

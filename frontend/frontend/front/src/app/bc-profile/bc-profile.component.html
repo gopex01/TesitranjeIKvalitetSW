@@ -1,18 +1,18 @@
-<div class="container">
-    <h1>Border Cross Details</h1>
-    <div class="user-info">
-        <p><strong>Name:</strong> {{(bcProfile$| async).Name}}</p>
-        <p><strong>Username:</strong> {{(bcProfile$| async).Username}}</p>
-        <p><strong>Password:</strong> {{(bcProfile$| async).Password}}</p>
-        <p><strong>Location:</strong> {{(bcProfile$| async).Location}}</p>
-        <p><strong>Country:</strong> {{(bcProfile$| async).Country}}</p>
-        <p><strong>Type:</strong> {{(bcProfile$| async).Type}}</p>
-        <p><strong>Work Hour:</strong> {{(bcProfile$| async).WorkHour}}</p>
-        <p><strong>Transport Connections:</strong> {{(bcProfile$| async).TransportConnections}}</p>
-        <p><strong>Capacity:</strong> {{(bcProfile$| async).Capacity}}</p>
-        <p><strong>Email:</strong> {{(bcProfile$| async).Email}}</p>
-        <p><strong>Phone Number:</strong> {{(bcProfile$| async).PhoneNumber}}</p>
-        <p><strong>Description:</strong> {{(bcProfile$| async).Description}}</p>
+<div class="container" data-testid="bc-container">
+    <h1 data-testid="h1-bc">Border Cross Details</h1>
+    <div class="user-info" data-testid="bc-info">
+        <p data-testid="bc-name"><strong>Name:</strong> {{(bcProfile$| async).name}}</p>
+        <p data-testid="bc-username"><strong>Username:</strong> {{(bcProfile$| async).username}}</p>
+        <p data-testid="bc-password"><strong>Password:</strong> {{(bcProfile$| async).password}}</p>
+        <p data-testid="bc-location"><strong>Location:</strong> {{(bcProfile$| async).location}}</p>
+        <p data-testid="bc-country"><strong>Country:</strong> {{(bcProfile$| async).country}}</p>
+        <p data-testid="bc-type"><strong>Type:</strong> {{(bcProfile$| async).type}}</p>
+        <p data-testid="bc-workhour"><strong>Work Hour:</strong> {{(bcProfile$| async).workHour}}</p>
+        <p data-testid="bc-transport"><strong>Transport Connections:</strong> {{(bcProfile$| async).transportConnections}}</p>
+        <p data-testid="bc-capacity"><strong>Capacity:</strong> {{(bcProfile$| async).capacity}}</p>
+        <p data-testid="bc-email"><strong>Email:</strong> {{(bcProfile$| async).email}}</p>
+        <p data-testid="bc-number"><strong>Phone Number:</strong> {{(bcProfile$| async).phoneNumber}}</p>
+        <p data-testid="bc-desc"><strong>Description:</strong> {{(bcProfile$| async).description}}</p>
     </div>
 </div>
 
