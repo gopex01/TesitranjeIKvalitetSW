@@ -25,4 +25,9 @@ export class UserProfileComponent implements OnInit{
     this.router.navigate(['createTerm']);
   }
 
+  returnAllBcs()
+  {
+    this.router.navigate(['AllBcs']);
+  }
+
 }

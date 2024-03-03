@@ -26,4 +26,10 @@ getBCInfo()
       this.httpClient.get(this.route+`getOneBC/${username}`))
   )
 }
+
+getAllBCs()
+{
+  return this.httpClient.get(this.route+`getALLBCS`);
+  
+}
 }
