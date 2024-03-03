@@ -6,6 +6,7 @@ import { BcProfileComponent } from './bc-profile/bc-profile.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { CreateTermComponent } from './create-term/create-term.component';
 import { ListBordercrossComponent } from './list-bordercross/list-bordercross.component';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'adminProfile',component:AdminProfileComponent},
   {path:'createTerm',component:CreateTermComponent},
   {path:'AllBcs',component:ListBordercrossComponent},
+  {path:'Settings',component:UserSettingsComponent}
 ];
 
 @NgModule({

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { selectUsername } from '../ngrx/login.selector';
 import { switchMap } from 'rxjs';
 
@@ -21,6 +21,48 @@ export class UserService {
     return this.store.select(selectUsername).pipe(
       switchMap(username=>
         this.httpClient.get(this.route+`getOneUser/${username}`))
+    )
+  }
+  changeName(newName:string)
+  {
+    console.log('pozvao sam name');
+    this.store.select(selectUsername).pipe(
+      switchMap(username=>
+      this.httpClient.patch(this.route+`updateName/${newName}/${username}`,{})
+      )
+    ).subscribe();
+  }
+  changeEmail(newEmail:string)
+  {
+    this.store.select(selectUsername).pipe(
+      switchMap(username=>
+        this.httpClient.patch(this.route+``,{})
+      )
+    )
+    
+  }
+  changePhone(newPhone:string)
+  {
+    this.store.select(selectUsername).pipe(
+      switchMap(username=>
+        this.httpClient.patch(this.route+`updatePhoneNumber/${newPhone}/${username}`,{})
+        )
+    )
+  }
+  changeUsername(newUsername:string)
+  {
+    console.log('pozvao sam');
+    this.store.select(selectUsername).pipe(
+      switchMap(username=>
+        this.httpClient.patch(this.route+`updateUsername/${newUsername}/${username}`,{})
+        )
+    )
+  }
+  deactivateAccount(newPassword:string)
+  {
+    this.store.select(selectUsername).pipe(
+      switchMap(username=>
+        this.httpClient.delete(this.route+`deactivateAccount/${username}/${newPassword}`))
     )
   }
 }

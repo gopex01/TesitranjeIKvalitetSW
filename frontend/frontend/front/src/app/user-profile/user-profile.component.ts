@@ -29,5 +29,9 @@ export class UserProfileComponent implements OnInit{
   {
     this.router.navigate(['AllBcs']);
   }
+  gotoSettings()
+  {
+    this.router.navigate(['Settings']);
+  }
 
 }
