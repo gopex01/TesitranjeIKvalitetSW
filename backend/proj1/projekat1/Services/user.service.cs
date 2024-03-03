@@ -202,6 +202,30 @@ public class UserService{
     }
 
 
+    public string updateEmail(string newEmail, string username)
+    {
+        try
+        {
+            var user = dbContext.Users.SingleOrDefault(user => user.Username == username);
+            if (user != null)
+            {
+                user.Email = newEmail;
+                dbContext.Users.Update(user);
+                dbContext.SaveChanges();
+                return "Success";
+            }
+            else
+            {
+                return "Error";
+            }
+        }
+        catch (Exception ex)
+        {
+            return ex.Message;
+        }
+    }
+
+
 
     public int getNumOfUsers()
     {
