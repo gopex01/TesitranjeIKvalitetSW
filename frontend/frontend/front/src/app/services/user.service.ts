@@ -36,9 +36,9 @@ export class UserService {
   {
     this.store.select(selectUsername).pipe(
       switchMap(username=>
-        this.httpClient.patch(this.route+``,{})
+        this.httpClient.patch(this.route+`updateEmail/${newEmail}/${username}`,{})
       )
-    )
+    ).subscribe();
     
   }
   changePhone(newPhone:string)
@@ -47,7 +47,7 @@ export class UserService {
       switchMap(username=>
         this.httpClient.patch(this.route+`updatePhoneNumber/${newPhone}/${username}`,{})
         )
-    )
+    ).subscribe()
   }
   changeUsername(newUsername:string)
   {
@@ -56,13 +56,13 @@ export class UserService {
       switchMap(username=>
         this.httpClient.patch(this.route+`updateUsername/${newUsername}/${username}`,{})
         )
-    )
+    ).subscribe()
   }
   deactivateAccount(newPassword:string)
   {
     this.store.select(selectUsername).pipe(
       switchMap(username=>
         this.httpClient.delete(this.route+`deactivateAccount/${username}/${newPassword}`))
-    )
+    ).subscribe()
   }
 }
