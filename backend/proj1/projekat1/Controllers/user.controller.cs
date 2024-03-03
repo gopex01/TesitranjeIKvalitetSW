@@ -81,7 +81,15 @@ public class UserEntityConttoller : ControllerBase
     return Ok(result);
    }
 
-   [HttpDelete]
+    [HttpPatch]
+    [Route("updateEmail/{newEmail}/{username}")]
+    public ActionResult<string> updateEmail([FromRoute] string newEmail, [FromRoute] string username)
+    {
+        var result = userService.updateEmail(newEmail, username);
+        return Ok(result);
+    }
+
+    [HttpDelete]
    [Route("deactivateAccount/{username}/{password}")]
    public ActionResult<string>deactivateAccount([FromRoute]string username,[FromRoute] string password)
    {
