@@ -32,4 +32,40 @@ getAllBCs()
   return this.httpClient.get(this.route+`getALLBCS`);
   
 }
+
+createBC(Name: string,
+  Username: string,
+  Password: string,
+  Location: string,
+  Country: string,
+  Type: string,
+  WorkHour: string,
+  TransportConnections: string,
+  Capacity: number,
+  Email: string,
+  PhoneNumber: string,
+  Description: string)
+{
+  let obj=
+  {
+  name:Name,
+  username:Username,
+  password:Password,
+  location:Location,
+  country:Country,
+  type:Type,
+  workHour:WorkHour,
+  transportConnections: TransportConnections,
+  capacity:Capacity,
+  email:Email,
+  phoneNumber:PhoneNumber,
+  description:Description
+  };
+
+  console.log(obj);
+
+  
+  this.httpClient.post(this.route+`addBC`, obj).subscribe();
+
+}
 }

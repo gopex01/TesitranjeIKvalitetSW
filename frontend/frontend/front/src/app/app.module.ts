@@ -15,7 +15,8 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import { CreateTermComponent } from './create-term/create-term.component';
 import { BordercrossComponent } from './bordercross/bordercross.component';
 import { ListBordercrossComponent } from './list-bordercross/list-bordercross.component';
-import { UserSettingsComponent } from './user-settings/user-settings.component'
+import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { CreateBCComponent } from './create-bc/create-bc.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { UserSettingsComponent } from './user-settings/user-settings.component'
     CreateTermComponent,
     BordercrossComponent,
     ListBordercrossComponent,
-    UserSettingsComponent
+    UserSettingsComponent,
+    CreateBCComponent
   ],
   imports: [
     BrowserModule,

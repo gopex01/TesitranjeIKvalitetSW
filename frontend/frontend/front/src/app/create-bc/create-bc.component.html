@@ -1,0 +1,23 @@
+<div class="login-page">
+  <div class="form">
+      <form class="register-form acrylic"></form>
+
+      <form class="login-form acrylic">
+          <span>Dodavanje BC </span>
+          <input data-testid="Name" type="text" placeholder="Name" [(ngModel)]="Name" />
+          <input data-testid="Username" type="text" placeholder="Username" [(ngModel)]="Username" />
+          <input data-testid="Password" type="password" placeholder="Password" [(ngModel)]="Password" />
+          <input data-testid="Location" type="text" placeholder="Location" [(ngModel)]="Location" />
+          <input data-testid="Country" type="text" placeholder="Country" [(ngModel)]="Country" />
+          <input data-testid="Type" type="text" placeholder="Type" [(ngModel)]="Type" />
+          <input data-testid="WorkHour" type="text" placeholder="WorkHour" [(ngModel)]="WorkHour" />
+          <input data-testid="TransportConnections" type="text" placeholder="TransportConnections" [(ngModel)]="TransportConnections" />
+          <input data-testid="Capacity" type="text" placeholder="Capacity" [(ngModel)]="Capacity" />
+          <input data-testid="Email" type="email" placeholder="Email" [(ngModel)]="Email" />
+          <input data-testid="PhoneNumber" type="text" placeholder="PhoneNumber" [(ngModel)]="PhoneNumber" />
+          <input data-testid="Description" type="text" placeholder="Description" [(ngModel)]="Description" />
+
+          <button id="DodajBC" (click)="dodajBC()">Dodaj border cross</button>
+      </form>
+  </div>
+</div>
