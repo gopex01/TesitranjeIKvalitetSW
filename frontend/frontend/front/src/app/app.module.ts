@@ -16,7 +16,9 @@ import { CreateTermComponent } from './create-term/create-term.component';
 import { BordercrossComponent } from './bordercross/bordercross.component';
 import { ListBordercrossComponent } from './list-bordercross/list-bordercross.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
-import { CreateBCComponent } from './create-bc/create-bc.component'
+import { CreateBCComponent } from './create-bc/create-bc.component';
+import { UserCardComponent } from './user-card/user-card.component';
+import { ListUserCardComponent } from './list-user-card/list-user-card.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { CreateBCComponent } from './create-bc/create-bc.component'
     BordercrossComponent,
     ListBordercrossComponent,
     UserSettingsComponent,
-    CreateBCComponent
+    CreateBCComponent,
+    UserCardComponent,
+    ListUserCardComponent
   ],
   imports: [
     BrowserModule,

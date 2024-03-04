@@ -65,4 +65,8 @@ export class UserService {
         this.httpClient.delete(this.route+`deactivateAccount/${username}/${newPassword}`))
     ).subscribe()
   }
+  getAllUsers()
+  {
+    return this.httpClient.get(this.route+'getAllUsers');
+  }
 }

@@ -25,8 +25,15 @@ constructor(private AdminService:AdminService, private router:Router)
 
   DodajBC()
   {
-    console.log("bastami")
       this.router.navigate(['CreateBC']);
+  }
+  gotoALLBCS()
+  {
+    this.router.navigate(['AllBcs']);
+  }
+  gotoAllUsers()
+  {
+    this.router.navigate(['AllUsers']);
   }
 
 }

@@ -8,40 +8,40 @@ import { BcService } from "../services/bc.service";
   styleUrls: ["./create-bc.component.css"],
 })
 export class CreateBCComponent implements OnInit {
-  Name: string;
-  Username: string;
-  Password: string;
-  Location: string;
-  Country: string;
-  Type: string;
-  WorkHour: string;
-  TransportConnections: string;
-  Capacity: number;
-  Email: string;
-  PhoneNumber: string;
-  Description: string;
+  name: string;
+  username: string;
+  password: string;
+  location: string;
+  country: string;
+  type: string;
+  workHour: string;
+  transportConnections: string;
+  capacity: string;
+  email: string;
+  phoneNumber: string;
+  description: string;
 
   constructor(private borderCrossService: BcService) {
     // Inicijalizacija atributa
-    this.Name = "";
-    this.Username = "";
-    this.Password = "";
-    this.Location = "";
-    this.Country = "";
-    this.Type = "";
-    this.WorkHour = "";
-    this.TransportConnections = "";
-    this.Capacity = 0;
-    this.Email = "";
-    this.PhoneNumber = "";
-    this.Description = "";
+    this.name = "";
+    this.username = "";
+    this.password = "";
+    this.location = "";
+    this.country = "";
+    this.type = "";
+    this.workHour = "";
+    this.transportConnections = "";
+    this.capacity = "";
+    this.email = "";
+    this.phoneNumber = "";
+    this.description = "";
   }
   ngOnInit(): void {}
 
   dodajBC() {
-    this.borderCrossService.createBC(this.Name, this.Username, this.Password, this.Location,
-      this.Country, this.Type, this.WorkHour, this.TransportConnections, this.Capacity, this.Email,
-      this.PhoneNumber, this.Description);
+    this.borderCrossService.createBC(this.name, this.username, this.password, this.location,
+      this.country, this.type, this.workHour, this.transportConnections, this.capacity, this.email,
+      this.phoneNumber, this.description);
 
   }
 }

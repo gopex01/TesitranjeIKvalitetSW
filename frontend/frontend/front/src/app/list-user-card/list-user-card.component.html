@@ -1,0 +1,6 @@
+
+<div class="mainDiv">
+    <div *ngFor="let u of arrUsers$ | async">
+        <app-user-card [user]="u"></app-user-card>
+    </div>
+</div>

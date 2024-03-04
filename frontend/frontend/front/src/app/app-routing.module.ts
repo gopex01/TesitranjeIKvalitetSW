@@ -8,6 +8,7 @@ import { CreateTermComponent } from "./create-term/create-term.component";
 import { ListBordercrossComponent } from "./list-bordercross/list-bordercross.component";
 import { UserSettingsComponent } from "./user-settings/user-settings.component";
 import { CreateBCComponent } from "./create-bc/create-bc.component";
+import { ListUserCardComponent } from "./list-user-card/list-user-card.component";
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: "AllBcs", component: ListBordercrossComponent },
   { path: "Settings", component: UserSettingsComponent },
   { path: "CreateBC", component: CreateBCComponent },
+  {path:'AllUsers',component:ListUserCardComponent},
 ];
 
 @NgModule({

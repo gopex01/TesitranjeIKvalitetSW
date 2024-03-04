@@ -4,7 +4,10 @@
       --<p data-testid="admin-username"><strong>Username:</strong> {{ (adminProfile$ | async).username }}</p>
       <p data-testid="admin-password"><strong>Password:</strong> {{ (adminProfile$ | async).password }}</p>
       <!-- Dodajte dodatne informacije o adminu po potrebi -->
-      <button (click)="DodajBC()"> Dodaj Border cross</button>
+      <button (click)="DodajBC()"> Add Border Cross</button>
+      <button (click)="gotoALLBCS()">All Border Crosses</button>
+      <button (click)="gotoAllUsers()">All Users</button>
+      <button>Delete Border Cross</button>
     </div>
   </div>
 
