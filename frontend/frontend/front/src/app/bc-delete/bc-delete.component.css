@@ -1,0 +1,12 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Dodajte poravnanje po vertikali */
+    height: 50vh; /* Opciono: Postavite visinu kako bi se centriranje primenilo na celu visinu ekrana */
+  }
+  
+  .border-cross-container {
+    border: 1px solid #ccc; /* Dodajte boju i debljinu okvira */
+    padding: 20px; /* Dodajte unutrašnji prostor oko elementa */
+    width: 400px; /* Opcionalno: Postavite širinu div-a */
+  }

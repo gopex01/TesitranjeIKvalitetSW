@@ -18,7 +18,9 @@ import { ListBordercrossComponent } from './list-bordercross/list-bordercross.co
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { CreateBCComponent } from './create-bc/create-bc.component';
 import { UserCardComponent } from './user-card/user-card.component';
-import { ListUserCardComponent } from './list-user-card/list-user-card.component'
+import { ListUserCardComponent } from './list-user-card/list-user-card.component';
+import { BcDeleteComponent } from './bc-delete/bc-delete.component';
+import { ListBcDeleteComponent } from './list-bc-delete/list-bc-delete.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,9 @@ import { ListUserCardComponent } from './list-user-card/list-user-card.component
     UserSettingsComponent,
     CreateBCComponent,
     UserCardComponent,
-    ListUserCardComponent
+    ListUserCardComponent,
+    BcDeleteComponent,
+    ListBcDeleteComponent
   ],
   imports: [
     BrowserModule,

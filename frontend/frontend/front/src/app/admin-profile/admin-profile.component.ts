@@ -36,4 +36,9 @@ constructor(private AdminService:AdminService, private router:Router)
     this.router.navigate(['AllUsers']);
   }
 
+  prebaciNaDelete()
+  {
+    this.router.navigate(['deleteBC']);
+  }
+
 }
