@@ -35,23 +35,29 @@
             <strong>Irregularities:</strong>{{term.irregularities}}
         </li>
 
-        <li data-testid="isCrossed">
-            
-            <input type="checkbox" id="isCrossedCheckbox" name="isCrossed" {{ term.isCrossed  }}>
-            <label for="isCrossedCheckbox">Is Crossed</label>
-        </li>
-        
-        <li data-testid="isComeBack">
-            <input type="checkbox" id="isComeBackCheckbox" name="isComeBack" {{ term.isComeBack }}>
-            <label for="isCrossedCheckbox">Is ComeBack</label>
-        </li>
-            
-        <li>
-            <input type="text" id="isCrossedInput" name="isCrossedInput" placeholder="Irregularities..." >
-        </li>
+        <div>
+            <ul>
+              <li data-testid="isCrossed">
+                <input type="checkbox" id="isCrossedCheckbox" name="isCrossed" [(ngModel)]="isCrossed">
+                <label for="isCrossedCheckbox">Is Crossed</label>
+              </li>
+          
+              <li data-testid="isComeBack">
+                <input type="checkbox" id="isComeBackCheckbox" name="isComeBack" [(ngModel)]="isComeBack">
+                <label for="isComeBackCheckbox">Is ComeBack</label>
+              </li>
+            </ul>
+          
+            <li>
+              <input type="text" id="isCrossedInput" name="isCrossedInput" [(ngModel)]="Irregularities" placeholder="Irregularities...">
+            </li>
+          
+            <button (click)="printValues()">Print Values</button>
+          </div>
+          
 
         <button (click)="updateTerm()">Save Changes</button>
            
 
-    </ul>
+</ul>
 </div>

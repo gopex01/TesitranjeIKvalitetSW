@@ -51,4 +51,14 @@ public class TermEntityController:ControllerBase
         return Ok(result);
     }
 
+
+    [HttpDelete]
+    [Route("deleteTerm/{termId}")]
+    public ActionResult<string> deleteTerm([FromRoute] int termId)
+    {
+        var result= terminService.deleteTerm(termId);
+        return Ok(result);
+
+    }
+
 }

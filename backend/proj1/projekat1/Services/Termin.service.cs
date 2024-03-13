@@ -1,5 +1,6 @@
 
 
+using System.Data.Common;
 using System.Drawing;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
@@ -93,5 +94,21 @@ public async Task<string> createTermin(TermEntity newTermin, string username, st
         dbContext.Terms.Update(term);
         dbContext.SaveChanges();
         return "Success";
+    }
+
+    public string deleteTerm(int idTerm)
+    {
+        var term = dbContext.Terms.FirstOrDefault(t => t.Id == idTerm);
+        if (term == null)
+        {
+            return "error";
+        }
+        else
+        {
+            dbContext.Terms.Remove(term);
+            dbContext.SaveChanges();
+            return "Success";
+        }
+        
     }
 }

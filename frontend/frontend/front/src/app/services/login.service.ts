@@ -46,8 +46,29 @@ export class LoginService {
     })
   }
 
-  signUp()
+  signUp( nameAndSurname:string, email:string,username:string,
+    password:string, phoneNumber:string, age:number, jmbg:string)
   {
     
+    let obj=
+    {
+      nameAndSurname:nameAndSurname,
+      email:email,
+      username:username,
+      password:password,
+      phoneNumber:phoneNumber,
+      age:age,
+      jmbg:jmbg
+    };
+
+      console.log("otac moj");
+    this.httpClient.post
+    (`http://localhost:5078/UserEntityConttoller/User/addUser`, obj).subscribe((x:any)=> console.log(x.status));
+    console.log("bastami");
+
+
+
+
+
   }
 }

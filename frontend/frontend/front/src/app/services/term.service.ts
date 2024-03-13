@@ -60,4 +60,10 @@ export class TermService {
   {
     return this.httpClient.patch(this.route+`updateTerm/${idTerm}/${isCrossed}/${isComeBack}/${irregularities}`,{}).subscribe();
   }
+
+  deleteTerm(idTerm:number)
+  {
+    return this.httpClient.delete(this.route+`deleteTerm/${idTerm}`).subscribe();
+    
+  }
 }
