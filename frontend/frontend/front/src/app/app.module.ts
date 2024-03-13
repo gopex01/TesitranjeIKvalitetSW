@@ -20,7 +20,12 @@ import { CreateBCComponent } from './create-bc/create-bc.component';
 import { UserCardComponent } from './user-card/user-card.component';
 import { ListUserCardComponent } from './list-user-card/list-user-card.component';
 import { BcDeleteComponent } from './bc-delete/bc-delete.component';
-import { ListBcDeleteComponent } from './list-bc-delete/list-bc-delete.component'
+import { ListBcDeleteComponent } from './list-bc-delete/list-bc-delete.component';
+import { PersonalTermCardComponent } from './personal-term-card/personal-term-card.component';
+import { ListPersonalTermComponent } from './list-personal-term/list-personal-term.component';
+import { BcTermCardComponent } from './bc-term-card/bc-term-card.component';
+import { ListBcTermComponent } from './list-bc-term/list-bc-term.component';
+import { SignupComponent } from './signup/signup.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +41,12 @@ import { ListBcDeleteComponent } from './list-bc-delete/list-bc-delete.component
     UserCardComponent,
     ListUserCardComponent,
     BcDeleteComponent,
-    ListBcDeleteComponent
+    ListBcDeleteComponent,
+    PersonalTermCardComponent,
+    ListPersonalTermComponent,
+    BcTermCardComponent,
+    ListBcTermComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

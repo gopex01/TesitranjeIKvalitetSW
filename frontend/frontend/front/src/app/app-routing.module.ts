@@ -11,6 +11,9 @@ import { CreateBCComponent } from "./create-bc/create-bc.component";
 import { ListUserCardComponent } from "./list-user-card/list-user-card.component";
 import { BcDeleteComponent } from "./bc-delete/bc-delete.component";
 import { ListBcDeleteComponent } from "./list-bc-delete/list-bc-delete.component";
+import { ListPersonalTermComponent } from "./list-personal-term/list-personal-term.component";
+import { ListBcTermComponent } from "./list-bc-term/list-bc-term.component";
+import { SignupComponent } from "./signup/signup.component";
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
@@ -22,7 +25,10 @@ const routes: Routes = [
   { path: "Settings", component: UserSettingsComponent },
   { path: "CreateBC", component: CreateBCComponent },
   {path:'AllUsers',component:ListUserCardComponent},
-  {path:'deleteBC',component:ListBcDeleteComponent}
+  {path:'deleteBC',component:ListBcDeleteComponent},
+  {path:'PersonalTerms',component:ListPersonalTermComponent},
+  {path:'BCTerm',component:ListBcTermComponent},
+  {path:'SignUp',component:SignupComponent}
 ];
 
 @NgModule({

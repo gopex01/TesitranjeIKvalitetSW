@@ -1,0 +1,5 @@
+<div class="MainDiv">
+    <div *ngFor="let t of arrayTerm$ |async">
+        <app-personal-term-card [term]="t"></app-personal-term-card>
+    </div>
+</div>

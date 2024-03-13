@@ -1,0 +1,57 @@
+<div class="user-entity-container">
+    <h1>User Entity Details</h1>
+    <ul>
+        <li data-testid="numOfPassengers">
+            <strong>Number of passengers:</strong> {{term.numOfPassengers}}
+        </li>
+        <li data-testid="carBrand">
+            <strong>Car brand:</strong> {{term.carBrand}}
+        </li>
+        <li data-testid="numOfRegistrationPlates">
+            <strong>Number of registartion plates</strong> {{ term.numOfRegistrationPlates }}
+        </li>
+        <li data-testid="chassisNumber">
+            <strong>Chassis Number</strong> {{ term.chassisNumber }}
+        </li>
+        <li data-testid="numberOfDays">
+            <strong>Phone Number:</strong> {{term.numberOfDays}}
+        </li>
+        <li data-testid="placeOfResidence">
+            <strong>Place of residence:</strong> {{ term.placeOfResidence }}
+        </li>
+        <li data-testid="jMBG">
+            <strong>Date and Time:</strong> {{ term.dateAndTime }}
+        </li>
+        <li data-testid="isPaid">
+            <strong>IsPaid:</strong>{{term.isPaid}}
+        </li>
+        <li data-testid="isCrossed">
+            <strong>IsCrossed:</strong>{{term.isCrossed}}
+        </li>
+        <li data-testid="isComeBack">
+            <strong>IsComeBack:</strong>{{term.isComeBack}}
+        </li>
+        <li data-testid="irregularities">
+            <strong>Irregularities:</strong>{{term.irregularities}}
+        </li>
+
+        <li data-testid="isCrossed">
+            
+            <input type="checkbox" id="isCrossedCheckbox" name="isCrossed" {{ term.isCrossed  }}>
+            <label for="isCrossedCheckbox">Is Crossed</label>
+        </li>
+        
+        <li data-testid="isComeBack">
+            <input type="checkbox" id="isComeBackCheckbox" name="isComeBack" {{ term.isComeBack }}>
+            <label for="isCrossedCheckbox">Is ComeBack</label>
+        </li>
+            
+        <li>
+            <input type="text" id="isCrossedInput" name="isCrossedInput" placeholder="Irregularities..." >
+        </li>
+
+        <button (click)="updateTerm()">Save Changes</button>
+           
+
+    </ul>
+</div>

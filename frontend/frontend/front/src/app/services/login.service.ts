@@ -45,4 +45,9 @@ export class LoginService {
       console.error(console.error("Greska prilikom slanje zahteva",error));
     })
   }
+
+  signUp()
+  {
+    
+  }
 }

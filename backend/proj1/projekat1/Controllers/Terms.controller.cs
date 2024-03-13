@@ -23,7 +23,7 @@ public class TermEntityController:ControllerBase
     }
     [HttpGet]
     [Route("getTerms/{username}")]
-    public ActionResult<IEnumerable<TermEntity>?> getTerms([FromRoute]string username)
+    public ActionResult<TermEntity[]> getTerms([FromRoute]string username)
     {
         var result=terminService.GetTermsAsync(username);
         return Ok(result);
@@ -38,9 +38,16 @@ public class TermEntityController:ControllerBase
 
     [HttpGet]
     [Route("getPersonalTerms/{username}")]
-    public ActionResult<IEnumerable<TermEntity>?> getPersonalTerms([FromRoute] string username)
+    public ActionResult<TermEntity[]> getPersonalTerms([FromRoute] string username)
     {
         var result=terminService.GetPersonalTermsAsync(username);
+        return Ok(result);
+    }
+    [HttpPatch]
+    [Route("updateTerm/{termId}/{isCrossed}/{isComeBack}/{irregularities}")]
+    public ActionResult<string> updateTerm([FromRoute] int termId,[FromRoute] bool isCrossed,[FromRoute] bool isComeBack,[FromRoute] string irregularities)
+    {
+        var result=terminService.updateTerm(termId,isCrossed,isComeBack,irregularities);
         return Ok(result);
     }
 

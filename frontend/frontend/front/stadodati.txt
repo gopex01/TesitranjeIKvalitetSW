@@ -1,0 +1,5 @@
+treba da dodamo yes i no radio buttoni u termini kod bc
+onda delete term dugme kod personal termini
+lista termina u create terms
+sakriven pass kod login
+sign up

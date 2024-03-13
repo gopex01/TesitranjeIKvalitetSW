@@ -50,16 +50,12 @@ public async Task<string> createTermin(TermEntity newTermin, string username, st
         //return $"Error when adding a border crossing : {ex.Message}";
     }
 }
-    public async Task<IEnumerable<TermEntity>?> GetTermsAsync(string username)
+    public TermEntity[] GetTermsAsync(string username)
     {
-        var bc = bcService.getOneBC(username);
-        Console.WriteLine(bc);
-        var term = await dbContext.CrossBorders
-            .Include(b => b.listOfTerms)
-            .Where(b => b.Username == username)
-            .FirstOrDefaultAsync();
-
-        return term?.listOfTerms?.Where(t => t.Accepted == true);
+        var terms=dbContext.Terms
+        .Where(t=>t.borderCross.Username==username)
+        .ToArray<TermEntity>();
+        return terms;
     }
 
     public int? getNumOfTerms()
@@ -75,15 +71,27 @@ public async Task<string> createTermin(TermEntity newTermin, string username, st
     }
 
 
-    public async Task<IEnumerable<TermEntity>?> GetPersonalTermsAsync(string username)
-{
-    var user =  userService.getUser(username);
+    public TermEntity[] GetPersonalTermsAsync(string username)
+    {
+        var terms= dbContext.Terms
+        .Where(t=>t.user.Username==username)
+        .ToArray<TermEntity>();
+        return terms;
+    
+    }
 
-    var term = await dbContext.Users
-        .Include(u => u.listOfTerms)
-        .Where(u => u.Username == username)
-        .FirstOrDefaultAsync();
-
-    return term?.listOfTerms?.Where(t => t.Accepted == true);
-}
+    public string updateTerm(int id,bool IsCrossed,bool IsComeBack,string irreg)
+    {
+        var term=dbContext.Terms.FirstOrDefault(t=>t.Id==id);
+        if(term==null)
+        {
+            return "error";
+        }
+        term.IsCrossed=IsCrossed;
+        term.IsComeBack=IsComeBack;
+        term.Irregularities=irreg;   
+        dbContext.Terms.Update(term);
+        dbContext.SaveChanges();
+        return "Success";
+    }
 }

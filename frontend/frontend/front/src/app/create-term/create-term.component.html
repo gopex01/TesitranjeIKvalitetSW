@@ -10,6 +10,9 @@
         <input data-testid="PlaceOfResidence" type="text" placeholder=" PlaceOfResidence" [(ngModel)]="placeOfResidence" />
         <input data-testid="DateAndTime" type="text" placeholder="DateAndTime" [(ngModel)]="dateAndTime" />
         <input data-testid="CardNumber" type="text" placeholder="CardNumber" [(ngModel)]="cardNumber">
+        <select id="borderCrossing" [(ngModel)]="selectedBC">
+                <option *ngFor="let option of borderCrossarr$ |async" [value]="option">{{option.name}}
+        </select>
         <button id="addTerm" (click)="createTerm()">Create Term</button>
 </div>
         

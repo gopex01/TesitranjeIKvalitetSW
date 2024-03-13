@@ -11,14 +11,18 @@ using System.Text.Json.Serialization;
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-         
         public int NumOfPassengers { get; set; }
 
         public string CarBrand { get; set; } = null!;
+
         public string NumOfRegistrationPlates { get; set; } = null!;
+
         public string ChassisNumber { get; set; } = null!;
+
+
         public int NumberOfDays { get; set; }
         public string PlaceOfResidence { get; set; } = null!;
+
         public DateTime? DateAndTime { get; set; }
 
         public bool IsPaid { get; set; }

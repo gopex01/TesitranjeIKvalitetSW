@@ -1,0 +1,11 @@
+<h3 data-testid="h3SignUp">Welcome to Application Sign Up to continue</h3>
+<div class="mainDiv" data-testid="mainDivSignUp">
+    <input placeholder="Name and Surname" data-testid="inputNameAndSurname" [(ngModel)]="nameAndSurname">
+    <input placeholder="Email" data-testid="inputEmail" [(ngModel)]="email">
+    <input placeholder="Username" data-testid="inputUsername" [(ngModel)]="username">
+    <input placeholder="Password" type="password" data-testid="inputPassword" [(ngModel)]="password">
+    <input placeholder="Phone Number" data-testid="inputPhoneNumber" [(ngModel)]="phoneNumber">
+    <input placeholder="Age" type="number" data-testid="inputAge" [(ngModel)]="age">
+    <input placeholder="JMBG" data-testid="inputJMBG" [(ngModel)]="jmbg">
+    <button data-testid="buttonSignUp" (click)="signUp()">Sign Up</button>
+</div>

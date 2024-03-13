@@ -1,7 +1,7 @@
 <h3 data-testid="h3Login">Welcome to Application login or signup to continue</h3>
 <div class="mainDiv" data-testid="mainDivLogin">
     <input placeholder="username" data-testid="inputUsername" [(ngModel)]="username">
-    <input placeholder="password" data-testid="inputPassword" [(ngModel)]="password">
+    <input placeholder="password" data-testid="inputPassword" [(ngModel)]="password" type="password">
     <button data-testid="buttonLogin" (click)="login()">Login</button>
-    <button data-testid="buttonSignUp">SignUp</button>
+    <button data-testid="buttonSignUp" (click)="gotoSignUp()">SignUp</button>
 </div>

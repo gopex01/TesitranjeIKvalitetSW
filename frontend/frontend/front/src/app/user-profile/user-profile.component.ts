@@ -33,5 +33,9 @@ export class UserProfileComponent implements OnInit{
   {
     this.router.navigate(['Settings']);
   }
+  gotoPersonalTerms()
+  {
+    this.router.navigate(['PersonalTerms']);
+  }
 
 }

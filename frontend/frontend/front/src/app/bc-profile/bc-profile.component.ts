@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BcService } from '../services/bc.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bc-profile',
@@ -11,7 +12,7 @@ export class BcProfileComponent implements OnInit {
 
   bcProfile$:Observable<any>;
 
-  constructor(private BCServer:BcService)
+  constructor(private BCServer:BcService,private router:Router)
   {
     this.bcProfile$=new Observable<any>();
   }
@@ -21,6 +22,10 @@ export class BcProfileComponent implements OnInit {
   ngOnInit(): void {
     this.bcProfile$=this.BCServer.getBCInfo();
     this.bcProfile$.subscribe((x)=>console.log(x));
+  }
+  gotoAllTerms()
+  {
+    this.router.navigate(['/BCTerm']);
   }
 
 

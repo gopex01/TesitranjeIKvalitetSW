@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TermService } from '../services/term.service';
+import { Observable } from 'rxjs';
+import { BcService } from '../services/bc.service';
 
 @Component({
   selector: 'app-create-term',
@@ -9,6 +11,8 @@ import { TermService } from '../services/term.service';
 export class CreateTermComponent implements OnInit{
   
 
+  borderCrossarr$:Observable<any>;
+  selectedBC:any;
   numOfPassanger:number;
   carBrand:string;
   numOfRegistration:string;
@@ -18,9 +22,13 @@ export class CreateTermComponent implements OnInit{
   dateAndTime:string;
   cardNumber:string;
   ngOnInit(): void {
+
+    this.borderCrossarr$=this.bcService.getAllBCs();
+    this.borderCrossarr$.subscribe();
   }
-  constructor(private termService:TermService)
+  constructor(private termService:TermService,private bcService:BcService)
   {
+    this.borderCrossarr$=new Observable<any>();
     this.numOfPassanger=0;
     this.carBrand="";
     this.numOfRegistration="";
