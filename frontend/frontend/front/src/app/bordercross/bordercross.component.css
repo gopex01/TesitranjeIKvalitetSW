@@ -1,12 +1,37 @@
-.body {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Dodajte poravnanje po vertikali */
-    height: 50vh; /* Opciono: Postavite visinu kako bi se centriranje primenilo na celu visinu ekrana */
-  }
-  
-  .border-cross-container {
-    border: 1px solid #ccc; /* Dodajte boju i debljinu okvira */
-    padding: 20px; /* Dodajte unutrašnji prostor oko elementa */
-    width: 400px; /* Opcionalno: Postavite širinu div-a */
-  }
+.border-cross-container {
+  border: 1px solid #ccc; /* Dodajte boju i debljinu okvira */
+  padding: 20px; /* Dodajte unutrašnji prostor oko elementa */
+  width: 400px; /* Opcionalno: Postavite širinu div-a */
+  text-align: left; /* Postavite tekst na levo */
+  margin: 20px; /* Dodajte prostor oko kontejnera */
+  border-radius: 10px; /* Dodajte zaobljenost ivica */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Dodajte senku */
+  background-color: #f0f0f0; /* Postavite boju pozadine */
+}
+
+.border-cross-container h1 {
+  margin-bottom: 20px; /* Dodajte razmak ispod naslova */
+}
+
+.border-cross-container ul {
+  list-style: none; /* Uklonite podrazumevane tačke */
+  padding: 0; /* Uklonite podrazumevani padding */
+}
+
+.border-cross-container li {
+  margin-bottom: 10px; /* Dodajte razmak između stavki */
+}
+
+.border-cross-container strong {
+  margin-right: 5px; /* Dodajte razmak sa desne strane jakih oznaka */
+}
+
+h1
+{
+  text-align: center;
+}
+
+ul
+{
+  text-align: center;
+}

@@ -1,15 +1,18 @@
 <div class="container" data-testid="user-profile-container">
+    <div>
     <h1 data-testid="h1-user">User Details</h1>
+    </div>
     <div class="user-info" data-testid="user-info-div">
         <p data-testid="user-name"><strong>Name and Surname:</strong>{{(user$ | async).nameAndSurname}}</p>
         <p data-testid="user-email"><strong>Email:</strong> {{(user$ | async).email}}</p>
-        <p data-testid="user-username"><strong>Username:</strong> {{(user$ | async)}}.username</p>
-        <p data-testid="user-password"><strong>Password:</strong> {{(user$ | async)}}.password</p>
-        <p data-testid="user-phone"><strong>Phone Number:</strong> {{(user$ | async)}}.phoneNumber</p>
-        <p data-testid="user-age"><strong>Age:</strong> {{(user$ | async)}}.age</p>
-        <p data-testid="user-jmbg"><strong>JMBG:</strong> {{(user$ | async)}}.jmbg</p>
+        <p data-testid="user-username"><strong>Username:</strong> {{(user$ | async).username}}</p>
+     
+        <p data-testid="user-phone"><strong>Phone Number:</strong> {{(user$ | async).phoneNumber}}</p>
+        <p data-testid="user-age"><strong>Age:</strong> {{(user$ | async).age}}</p>
+        <p data-testid="user-jmbg"><strong>JMBG:</strong> {{(user$ | async).jmbg}}</p>
     </div>
 </div>
+
 <div class="user-option" data-testid="user-option">
     <button data-testid="user-create-term" (click)="gotoCreateTerm()">Create Term</button>
     <button data-testid="user-personalterms" (click)="gotoPersonalTerms()">All Terms</button>

@@ -1,12 +1,47 @@
-.body {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Dodajte poravnanje po vertikali */
-    height: 50vh; /* Opciono: Postavite visinu kako bi se centriranje primenilo na celu visinu ekrana */
-  }
-  
-  .border-cross-container {
-    border: 1px solid #ccc; /* Dodajte boju i debljinu okvira */
-    padding: 20px; /* Dodajte unutrašnji prostor oko elementa */
-    width: 400px; /* Opcionalno: Postavite širinu div-a */
-  }
+.user-entity-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.user-entity-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-entity-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.user-entity-container li {
+  margin-bottom: 10px;
+}
+
+.user-entity-container strong {
+  margin-right: 5px;
+}
+
+.user-entity-container input[type="text"] {
+  width: calc(100% - 10px); /* Širina input polja uzimajući u obzir marginu */
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.user-entity-container button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.user-entity-container button:hover {
+  background-color: #0056b3;
+}

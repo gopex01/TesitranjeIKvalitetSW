@@ -1,5 +1,5 @@
-<div class="user-entity-container">
-    <h1>User Entity Details</h1>
+<div data-testid="divTest" class="Term-container">
+    <h1 data-testid="Term">Term </h1>
     <ul>
         <li data-testid="numOfPassengers">
             <strong>Number of passengers:</strong> {{term.numOfPassengers}}
@@ -36,6 +36,6 @@
         </li>
         
     </ul>
-    <button (click)="deleteTerm()">Delete term</button>
+    <button data-testid="DeleteTerm" (click)="deleteTerm()">Delete term</button>
 </div>
 

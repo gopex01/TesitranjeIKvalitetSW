@@ -28,5 +28,13 @@ export class BcProfileComponent implements OnInit {
     this.router.navigate(['/BCTerm']);
   }
 
+  LogOut()
+  {
+    this.router.navigate(['/']);
+  }
 
+  gotoBCS()
+  {
+    this.router.navigate(['/AllBcs']);
+  }
 }

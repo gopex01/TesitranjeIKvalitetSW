@@ -1,0 +1,11 @@
+.MainDiv {
+    display: flex;
+    flex-direction: row; /* Postavite da se elementi raspoređuju horizontalno */
+    flex-wrap: wrap; /* Dozvolite prelazak u novi red kada nema dovoljno mesta */
+
+}
+
+.pojedinacniBC
+{
+    margin:10px;
+}

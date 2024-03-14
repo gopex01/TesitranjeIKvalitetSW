@@ -1,18 +1,79 @@
-<h1>Dodavanje border crossa </h1>
+<h1>Dodavanje border crossa</h1>
 <div class="container">
+  <input
+    data-testid="NumOfPassanger"
+    type="text"
+    placeholder="NumOfPassanger"
+    [(ngModel)]="numOfPassanger"
+  />
 
-        <input data-testid="NumOfPassanger" type="text" placeholder="NumOfPassanger" [(ngModel)]="numOfPassanger"/>
+  <input
+    data-testid="CarBrand"
+    type="text"
+    placeholder="CarBrand"
+    [(ngModel)]="carBrand"
+  />
+  <input
+    data-testid="NumOfRegistration"
+    type="password"
+    placeholder="NumOfRegistration"
+    [(ngModel)]="numOfRegistration"
+  />
+  <input
+    data-testid="ChassisNumber"
+    type="text"
+    placeholder="ChassisNumber"
+    [(ngModel)]="chassisNumber"
+  />
+  <input
+    data-testid="NumberOfDays"
+    type="text"
+    placeholder="NumberOfDays"
+    [(ngModel)]="numberOfDays"
+  />
+  <input
+    data-testid="PlaceOfResidence"
+    type="text"
+    placeholder=" PlaceOfResidence"
+    [(ngModel)]="placeOfResidence"
+  />
+  <!-- <input
+    data-testid="DateAndTime"
+    type="date"
+    placeholder="DateAndTime"
+    [(ngModel)]="dateAndTime"
+  /> -->
 
-        <input data-testid="CarBrand" type="text" placeholder="CarBrand" [(ngModel)]="carBrand" />
-        <input data-testid="NumOfRegistration" type="password" placeholder="NumOfRegistration" [(ngModel)]="numOfRegistration" />
-        <input data-testid="ChassisNumber" type="text" placeholder="ChassisNumber" [(ngModel)]="chassisNumber" />
-        <input data-testid="NumberOfDays" type="text" placeholder="NumberOfDays" [(ngModel)]="numberOfDays"/>
-        <input data-testid="PlaceOfResidence" type="text" placeholder=" PlaceOfResidence" [(ngModel)]="placeOfResidence" />
-        <input data-testid="DateAndTime" type="text" placeholder="DateAndTime" [(ngModel)]="dateAndTime" />
-        <input data-testid="CardNumber" type="text" placeholder="CardNumber" [(ngModel)]="cardNumber">
-        <select id="borderCrossing" [(ngModel)]="selectedBC">
-                <option *ngFor="let option of borderCrossarr$ |async" [value]="option">{{option.name}}
-        </select>
-        <button id="addTerm" (click)="createTerm()">Create Term</button>
+  <!-- <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field> -->
+  <!-- <mat-form-field>
+                <mat-label>Datum</mat-label>
+                <input matInput [matDatepicker]="picker" placeholder="Izaberite datum">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field> -->
+  <mat-form-field>
+    <mat-label>Datum</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="dateAndTime" />
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <input
+    data-testid="CardNumber"
+    type="text"
+    placeholder="CardNumber"
+    [(ngModel)]="cardNumber"
+  />
+  <select id="borderCrossing" [(ngModel)]="selectedBC">
+    <option *ngFor="let option of borderCrossarr$ | async" [value]="option">
+      {{ option.name }}
+    </option>
+  </select>
+
+  <button id="addTerm" (click)="createTerm()">Create Term</button>
 </div>
-        

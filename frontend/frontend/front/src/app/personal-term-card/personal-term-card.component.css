@@ -1,12 +1,38 @@
-.body {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Dodajte poravnanje po vertikali */
-    height: 50vh; /* Opciono: Postavite visinu kako bi se centriranje primenilo na celu visinu ekrana */
-  }
-  
-  .border-cross-container {
-    border: 1px solid #ccc; /* Dodajte boju i debljinu okvira */
-    padding: 20px; /* Dodajte unutrašnji prostor oko elementa */
-    width: 400px; /* Opcionalno: Postavite širinu div-a */
-  }
+.Term-container {
+  border: 1px solid #ccc; /* Dodajte boju i debljinu okvira */
+  padding: 20px; /* Dodajte unutrašnji prostor oko elementa */
+  width: 400px; /* Opcionalno: Postavite širinu div-a */
+  text-align: center; /* Centrirajte tekst unutar div-a */
+  margin: 0 auto; /* Centrirajte div horizontalno */
+  background-color: #f0f0f0; /* Postavite boju pozadine */
+  border-radius: 10px; /* Dodajte zaobljenost ivica */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Dodajte senku */
+}
+
+.Term-container h1 {
+  margin-bottom: 20px; /* Dodajte razmak ispod naslova */
+}
+
+.Term-container ul {
+  list-style: none; /* Uklonite podrazumevane tačke */
+  padding: 0; /* Uklonite podrazumevani padding */
+}
+
+.Term-container li {
+  margin-bottom: 10px; /* Dodajte razmak između stavki */
+}
+
+.Term-container button {
+  padding: 10px 20px; /* Dodajte prostor oko dugmeta */
+  margin-top: 20px; /* Dodajte razmak iznad dugmeta */
+  border: none; /* Uklonite ivice */
+  border-radius: 5px; /* Dodajte zaobljenost ivica */
+  background-color: #007bff; /* Dodajte boju pozadine */
+  color: #fff; /* Postavite boju teksta na belu */
+  cursor: pointer; /* Postavite kursor na pokazivač */
+  transition: background-color 0.3s; /* Dodajte glatku tranziciju boje pozadine */
+}
+
+.Term-container button:hover {
+  background-color: #0056b3; /* Promenite boju pozadine na hover-u */
+}

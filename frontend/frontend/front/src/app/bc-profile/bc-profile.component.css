@@ -1,27 +1,51 @@
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .user-info {
-    margin-top: 20px;
-    text-align: center; /* Centriranje teksta */
-  }
-  
-  .user-info p {
-    margin-bottom: 10px;
-    text-align: left; /* Ponovno postavljanje teksta na lijevu stranu */
-  }
-  
-  .user-info strong {
-    font-weight: bold;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-info {
+  margin-top: 20px;
+  text-align: center; /* Centriranje teksta */
+}
+
+.user-info p {
+  margin-bottom: 10px;
+  text-align: left; /* Ponovno postavljanje teksta na lijevu stranu */
+}
+
+.container {
+  text-align: center; /* Centrirajte sadržaj unutar .container diva */
+}
+
+.user-info {
+  display: inline-block; /* Promenite display na inline-block kako bi se centriranje primenilo */
+  text-align: left; /* Postavite tekst unutar .user-info diva na levo */
+  margin: 0 auto; /* Centrirajte .user-info div horizontalno */
+}
+
+.button {
+  padding: 10px 20px;
+margin: 0 10px;
+border: none;
+border-radius: 5px;
+background-color: #007bff;
+color: #fff;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.buttoni
+{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }

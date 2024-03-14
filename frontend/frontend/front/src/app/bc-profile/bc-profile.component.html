@@ -14,6 +14,10 @@
         <p data-testid="bc-number"><strong>Phone Number:</strong> {{(bcProfile$| async).phoneNumber}}</p>
         <p data-testid="bc-desc"><strong>Description:</strong> {{(bcProfile$| async).description}}</p>
     </div>
-    <button (click)="gotoAllTerms()">All Terms</button>
+</div>
+<div  class="buttoni">
+    <Button class="button" (click)="gotoAllTerms()">All Terms</Button>
+    <button  class="button"(click)="LogOut()">Log Out</button>
+    <button  class="button" (click)="gotoBCS()">All BCS</button>
 </div>
 

@@ -1,6 +1,6 @@
 <div class="MainDiv">
-    <div *ngFor="let bc of arrayBC$ | async ">
-            <app-bordercross [bc]="bc"> </app-bordercross>
+    <div  class="pojedinacniBC" *ngFor="let bcs of arrayBC$ | async ">
+            <app-bordercross [bc]="bcs"> </app-bordercross>
 
     </div>    
 </div>

@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BordercrossComponent  implements OnInit   {
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+   
   }
   
   constructor()

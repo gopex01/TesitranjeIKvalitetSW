@@ -33,7 +33,7 @@ export class TermService {
       chassisNumber:chassisNumber,
       numberOfDays:numberOfDays,
       placeOfResidence:placeOfResidence,
-      dateAndTime:"2024-03-02T14:43:53.179Z",
+      dateAndTime: dateAndTime,
       isPaid:op,
       isCrossed:false,
       isComeBack:false,

@@ -25,7 +25,18 @@ import { PersonalTermCardComponent } from './personal-term-card/personal-term-ca
 import { ListPersonalTermComponent } from './list-personal-term/list-personal-term.component';
 import { BcTermCardComponent } from './bc-term-card/bc-term-card.component';
 import { ListBcTermComponent } from './list-bc-term/list-bc-term.component';
-import { SignupComponent } from './signup/signup.component'
+import { SignupComponent } from './signup/signup.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MAT_NATIVE_DATE_FORMATS, MatNativeDateModule, NativeDateAdapter } from '@angular/material/core';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +64,10 @@ import { SignupComponent } from './signup/signup.component'
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatFormFieldModule,
     StoreModule.forRoot({
       'login':loginReducer
     }),
@@ -65,8 +80,13 @@ import { SignupComponent } from './signup/signup.component'
       traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
       connectOutsideZone: true // If set to true, the connection is established outside the Angular zone for better performance
     }),
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: DateAdapter, useClass: NativeDateAdapter },
+    { provide: MAT_DATE_FORMATS, useValue: MAT_NATIVE_DATE_FORMATS },
+    { provide: MAT_DATE_LOCALE, useValue: 'sr' },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
