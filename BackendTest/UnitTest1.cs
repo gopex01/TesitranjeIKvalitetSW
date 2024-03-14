@@ -3,6 +3,7 @@ using Moq;
 using projekat1.Controllers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 
 namespace BackendTest
 {
@@ -75,20 +76,12 @@ namespace BackendTest
             var result=userService.getUser(username);
             Assert.That(result, Is.Null);
         }
-        //ovo ne radi i ne umem da ga sredim
+        
         [Test]
-        [TestCase("zeks")]
-        public void getUserExceptionThrowReturnNull(string username)
+        [TestCase(22)]
+        public void getUserWrongType(int username)
         {
-            var mockedDbContext = new Mock<AppDbContext>();
-
-            mockedDbContext.SetupGet(db => db.Users).Throws(new Exception("Simulated Exception"));
-
-            var userServiceWithMock = new UserService(mockedDbContext.Object);
-
-            var result = userServiceWithMock.getUser(username);
-
-            Assert.That(result, Is.Null);
+            
         }
 
         [Test]

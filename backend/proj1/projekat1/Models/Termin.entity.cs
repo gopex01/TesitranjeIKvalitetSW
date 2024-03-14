@@ -29,11 +29,9 @@ using System.Text.Json.Serialization;
         public bool IsCrossed { get; set; }
         public bool IsComeBack { get; set; }
         public string Irregularities { get; set; } = null!;
-        public bool Accepted { get; set; }
 
        public UserEntity? user{get; set;}
        public BorderCrossEntity? borderCross{get;set;}
 
-       public ICollection<NotificationEntity>? listOfNotifications{get;set;}
 
     }

@@ -64,7 +64,9 @@ export class BcService {
 
     console.log(obj);
 
-    this.httpClient.post(this.route + `addBC`, obj).subscribe();
+    this.httpClient.post(this.route + `addBC`, obj).subscribe(x=>{
+      console.log('resp',x);
+    });
   }
 
   deleteBC(name: string) {

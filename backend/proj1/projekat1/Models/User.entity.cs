@@ -15,6 +15,5 @@ public class UserEntity{
 
 
     public ICollection<TermEntity>? listOfTerms{get; set;}
-    public ICollection<NotificationEntity>? listOfNotifications{get;set;}
 
 }

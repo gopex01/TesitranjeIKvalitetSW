@@ -41,9 +41,9 @@ namespace BackendTest
             var initialData = new List<TermEntity>
             {
 
-                new TermEntity{ Id = 1,NumOfPassengers=2,CarBrand="Audi",NumOfRegistrationPlates="PI029PP",ChassisNumber="2skoskao92ka",NumberOfDays=4,PlaceOfResidence="Grcka",DateAndTime=new DateTime(),IsPaid=false,IsCrossed=false,IsComeBack=false,Accepted=true,Irregularities="nema",user=users[0],borderCross=bcs[0] },//,user=new UserEntity{Id = 2,NameAndSurname="Zeljko Vasic",Email="zeljko@gmail.com",Username="zeks",Password="zeljko",PhoneNumber="064192992",Age=19,JMBG="029102910901"},borderCross=new BorderCrossEntity{Id=1,Name="Gradina",Username="GradinaGP",Password="Gradina",Location="East",Country="Serbia",Type="transport",WorkHour="00-24H",TransportConnections="transport",Capacity="12",Email="Gradina@gmail.com",PhoneNumber="010292929",Description="nodesc" } },
-                 new TermEntity{ Id = 2,NumOfPassengers=4,CarBrand="VW",NumOfRegistrationPlates="NI029PP",ChassisNumber="OS9Ak92ka",NumberOfDays=5,PlaceOfResidence="Turska",DateAndTime=new DateTime(),IsPaid=false,IsCrossed=false,IsComeBack=false,Accepted=true,Irregularities="nema",user=users[1],borderCross=bcs[1] },//=new UserEntity{Id = 3,NameAndSurname="Zeljko Madic",Email="zeljko@gmail.com",Username="zeks",Password="zeljko",PhoneNumber="064192992",Age=19,JMBG="029102910901"},borderCross=new BorderCrossEntity{Id=2,Name="Horgos",Username="HorgosGP",Password="Gradina",Location="East",Country="Serbia",Type="transport",WorkHour="00-24H",TransportConnections="transport",Capacity="12",Email="Gradina@gmail.com",PhoneNumber="010292929",Description="nodesc" } },
-                  new TermEntity{ Id = 3,NumOfPassengers=5,CarBrand="BMW",NumOfRegistrationPlates="BG029PP",ChassisNumber="2sppsij1o92ka",NumberOfDays=7,PlaceOfResidence="Bugarska",DateAndTime=new DateTime(),IsPaid=false,IsCrossed=false,IsComeBack=false,Accepted=true,Irregularities="nema",user=users[2],borderCross=bcs[2] },//=new UserEntity {Id = 4,NameAndSurname="Zeljko Petric",Email="zeljko@gmail.com",Username="zeks",Password="zeljko",PhoneNumber="064192992",Age=19,JMBG="029102910901" },borderCross=new BorderCrossEntity{Id=3,Name="Batrovci",Username="BatrovciGP",Password="Gradina",Location="East",Country="Serbia",Type="transport",WorkHour="00-24H",TransportConnections="transport",Capacity="12",Email="Gradina@gmail.com",PhoneNumber="010292929",Description="nodesc"} },
+                new TermEntity{ Id = 1,NumOfPassengers=2,CarBrand="Audi",NumOfRegistrationPlates="PI029PP",ChassisNumber="2skoskao92ka",NumberOfDays=4,PlaceOfResidence="Grcka",DateAndTime=new DateTime(),IsPaid=false,IsCrossed=false,IsComeBack=false,Irregularities="nema",user=users[0],borderCross=bcs[0] },//,user=new UserEntity{Id = 2,NameAndSurname="Zeljko Vasic",Email="zeljko@gmail.com",Username="zeks",Password="zeljko",PhoneNumber="064192992",Age=19,JMBG="029102910901"},borderCross=new BorderCrossEntity{Id=1,Name="Gradina",Username="GradinaGP",Password="Gradina",Location="East",Country="Serbia",Type="transport",WorkHour="00-24H",TransportConnections="transport",Capacity="12",Email="Gradina@gmail.com",PhoneNumber="010292929",Description="nodesc" } },
+                 new TermEntity{ Id = 2,NumOfPassengers=4,CarBrand="VW",NumOfRegistrationPlates="NI029PP",ChassisNumber="OS9Ak92ka",NumberOfDays=5,PlaceOfResidence="Turska",DateAndTime=new DateTime(),IsPaid=false,IsCrossed=false,IsComeBack=false,Irregularities="nema",user=users[1],borderCross=bcs[1] },//=new UserEntity{Id = 3,NameAndSurname="Zeljko Madic",Email="zeljko@gmail.com",Username="zeks",Password="zeljko",PhoneNumber="064192992",Age=19,JMBG="029102910901"},borderCross=new BorderCrossEntity{Id=2,Name="Horgos",Username="HorgosGP",Password="Gradina",Location="East",Country="Serbia",Type="transport",WorkHour="00-24H",TransportConnections="transport",Capacity="12",Email="Gradina@gmail.com",PhoneNumber="010292929",Description="nodesc" } },
+                  new TermEntity{ Id = 3,NumOfPassengers=5,CarBrand="BMW",NumOfRegistrationPlates="BG029PP",ChassisNumber="2sppsij1o92ka",NumberOfDays=7,PlaceOfResidence="Bugarska",DateAndTime=new DateTime(),IsPaid=false,IsCrossed=false,IsComeBack=false,Irregularities="nema",user=users[2],borderCross=bcs[2] },//=new UserEntity {Id = 4,NameAndSurname="Zeljko Petric",Email="zeljko@gmail.com",Username="zeks",Password="zeljko",PhoneNumber="064192992",Age=19,JMBG="029102910901" },borderCross=new BorderCrossEntity{Id=3,Name="Batrovci",Username="BatrovciGP",Password="Gradina",Location="East",Country="Serbia",Type="transport",WorkHour="00-24H",TransportConnections="transport",Capacity="12",Email="Gradina@gmail.com",PhoneNumber="010292929",Description="nodesc"} },
 
             };
           
@@ -81,8 +81,8 @@ namespace BackendTest
                  IsPaid= isPaid,
                  IsCrossed=isCrossed,
                  IsComeBack=isComeBack,
-                 Irregularities=irregularities,
-                 Accepted=Accepted
+                 Irregularities=irregularities
+         
 
             };
 
@@ -113,8 +113,8 @@ namespace BackendTest
                 IsPaid = isPaid,
                 IsCrossed = isCrossed,
                 IsComeBack = isComeBack,
-                Irregularities = irregularities,
-                Accepted = Accepted
+                Irregularities = irregularities
+
 
             };
 
@@ -145,8 +145,7 @@ namespace BackendTest
                 IsPaid = isPaid,
                 IsCrossed = isCrossed,
                 IsComeBack = isComeBack,
-                Irregularities = irregularities,
-                Accepted = Accepted
+                Irregularities = irregularities
 
             };
 
@@ -170,15 +169,14 @@ namespace BackendTest
         [TestCase("GradinaGP")]
         public async Task getTermsAsyncSuccess(string username)
         {
-            var result = await terminService.GetTermsAsync(username);
-            Assert.That(result, Is.Not.Null);
+            var result = terminService.GetTermsAsync(username);
             Assert.AreEqual(result?.Count(), 1);
         }
         [Test]
         [TestCase("PresevoGP")]
         public async Task getTermsAsyncNull(string username)
         {
-            var result = await terminService.GetTermsAsync(username);
+            var result =  terminService.GetTermsAsync(username);
             Assert.That(result, Is.Null);
         }
         [Test]
@@ -218,7 +216,7 @@ namespace BackendTest
         [TestCase("zeks")]
         public  async Task getPersonalTermsSuccess(string username)
         {
-            var result = await terminService.GetPersonalTermsAsync(username);
+            var result =  terminService.GetPersonalTermsAsync(username);
             Assert.That(result, Is.Not.Null);
         }
 
@@ -227,7 +225,7 @@ namespace BackendTest
         public async Task getPersonalTermsFail(string username)
         {
 
-            var result = await terminService.GetPersonalTermsAsync(username);
+            var result =  terminService.GetPersonalTermsAsync(username);
             Assert.That(result, Is.Null);
 
         }

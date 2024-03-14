@@ -24,7 +24,6 @@ builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<BorderCrossService>();
 builder.Services.AddScoped<TerminService>();
 builder.Services.AddScoped<AdminService>();
-builder.Services.AddScoped<NotificationService>();
 builder.Services.AddScoped<AppService>();
 
 builder.Services.AddCors(options=>{
