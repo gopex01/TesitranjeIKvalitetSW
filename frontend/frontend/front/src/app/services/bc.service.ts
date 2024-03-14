@@ -74,4 +74,9 @@ export class BcService {
 
 
   }
+
+  getNumOfBcs()
+  {
+   return  this.httpClient.get(this.route+`getNumOfBC`);
+  }
 }

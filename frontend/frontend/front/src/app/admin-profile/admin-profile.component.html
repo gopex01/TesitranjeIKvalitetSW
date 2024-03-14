@@ -1,13 +1,16 @@
 <div class="container" data-testid="admin-container">
     <h1 data-tesid="h1-admin">Admin Panel</h1>
     <div class="user-info" data-testid="admin-info">
-      --<p data-testid="admin-username"><strong>Username:</strong> {{ (adminProfile$ | async).username }}</p>
-      <p data-testid="admin-password"><strong>Password:</strong> {{ (adminProfile$ | async).password }}</p>
+      --<p data-testid="admin-username"><strong>Current active Users:</strong> {{ numberOfUsers}}</p>
+      <p data-testid="admin-username"><strong>Current active BCS:</strong> {{numberOfBcs}}</p>
+      <p data-testid="admin-password"><strong>Current active Terms:</strong> {{ numberOfTerms }}</p>
       <!-- Dodajte dodatne informacije o adminu po potrebi -->
-      <button (click)="DodajBC()"> Add Border Cross</button>
-      <button (click)="gotoALLBCS()">All Border Crosses</button>
-      <button (click)="gotoAllUsers()">All Users</button>
-      <button (click)="prebaciNaDelete()">Delete Border Cross</button>
+      <div class="butons">
+        <button  class="button"  (click)="DodajBC()"> Add Border Cross</button>
+        <button class="button" (click)="gotoALLBCS()">All Border Crosses</button>
+        <button class="button" (click)="gotoAllUsers()">All Users</button>
+        <button class="button" (click)="prebaciNaDelete()">Delete Border Cross</button>
+      </div>
     </div>
   </div>
 

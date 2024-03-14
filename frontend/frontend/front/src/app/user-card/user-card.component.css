@@ -1,12 +1,30 @@
-.body {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Dodajte poravnanje po vertikali */
-    height: 50vh; /* Opciono: Postavite visinu kako bi se centriranje primenilo na celu visinu ekrana */
-  }
-  
-  .border-cross-container {
-    border: 1px solid #ccc; /* Dodajte boju i debljinu okvira */
-    padding: 20px; /* Dodajte unutrašnji prostor oko elementa */
-    width: 400px; /* Opcionalno: Postavite širinu div-a */
-  }
+.user-entity-container {
+ 
+
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px; /* Zaobljeni rubovi */
+  width: 300px; /* Možete prilagoditi širinu prema  potrebi */
+}
+
+.user-entity-container h1 {
+  text-align: center;
+}
+
+.user-entity-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-entity-container li {
+  margin-bottom: 10px;
+}
+
+.user-entity-container li strong {
+  font-weight: bold;
+}
+
+.user-entity-container li:last-child {
+  margin-bottom: 0;
+}

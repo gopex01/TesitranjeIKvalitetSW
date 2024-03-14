@@ -10,7 +10,7 @@ export class UserCardComponent implements OnInit{
   @Input()
   user:any;
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
   constructor()
   {

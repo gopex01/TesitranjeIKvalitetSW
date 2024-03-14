@@ -1,0 +1,12 @@
+.mainDiv
+{
+    display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+.user
+{
+    margin: 10px;
+}
+    

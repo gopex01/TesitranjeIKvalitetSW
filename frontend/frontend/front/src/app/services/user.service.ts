@@ -69,4 +69,9 @@ export class UserService {
   {
     return this.httpClient.get(this.route+'getAllUsers');
   }
+
+  getNumOfUsers()
+  {
+    return this.httpClient.get(this.route+'getNumOfUsers');
+  }
 }

@@ -1,7 +1,7 @@
 <div class="container" data-testid="bc-container">
-    <h1 data-testid="h1-bc">Border Cross Details</h1>
+    <h1 data-testid="h1-bc">{{(bcProfile$| async).name}}</h1>
+    
     <div class="user-info" data-testid="bc-info">
-        <p data-testid="bc-name"><strong>Name:</strong> {{(bcProfile$| async).name}}</p>
         <p data-testid="bc-username"><strong>Username:</strong> {{(bcProfile$| async).username}}</p>
         <p data-testid="bc-password"><strong>Password:</strong> {{(bcProfile$| async).password}}</p>
         <p data-testid="bc-location"><strong>Location:</strong> {{(bcProfile$| async).location}}</p>

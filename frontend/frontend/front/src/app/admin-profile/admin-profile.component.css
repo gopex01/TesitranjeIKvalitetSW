@@ -25,3 +25,20 @@
   .user-info strong {
     font-weight: bold;
 }
+
+.button {
+  padding: 10px 20px;
+margin: 0 10px;
+border: none;
+border-radius: 5px;
+background-color: #007bff;
+color: #fff;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.butons
+{
+  display: flex;
+  flex-direction: row;
+}

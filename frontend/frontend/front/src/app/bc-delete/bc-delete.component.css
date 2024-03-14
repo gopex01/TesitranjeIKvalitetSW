@@ -1,12 +1,44 @@
-.body {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Dodajte poravnanje po vertikali */
-    height: 50vh; /* Opciono: Postavite visinu kako bi se centriranje primenilo na celu visinu ekrana */
-  }
-  
-  .border-cross-container {
-    border: 1px solid #ccc; /* Dodajte boju i debljinu okvira */
-    padding: 20px; /* Dodajte unutrašnji prostor oko elementa */
-    width: 400px; /* Opcionalno: Postavite širinu div-a */
-  }
+.border-cross-container {
+  background-color: #f9f9f9;
+  border: 2px solid gray; /* Smeđa boja okvira */
+  padding: 20px;
+  border-radius: 10px; /* Zaobljeni rubovi */
+  width: 400px; /* Možete prilagoditi širinu prema potrebi */
+}
+
+.border-cross-container h1[data-testid="bcName"] {
+  text-align: center;
+  margin-bottom: 10px; /* Dodajte malo prostora ispod naslova */
+}
+
+.border-cross-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.border-cross-container li {
+  margin-bottom: 10px;
+}
+
+.border-cross-container li strong {
+  font-weight: bold;
+}
+
+.border-cross-container li:last-child {
+  margin-bottom: 0;
+}
+
+.border-cross-container button {
+  background-color: #007bff;
+  color: white; /* Boja teksta */
+  border: none;
+  padding: 10px 20px; /* Dodajte prostor oko teksta dugmeta */
+  border-radius: 5px;
+  cursor: pointer; /* Promena kursora na pokazivač kada se pređe preko dugmeta */
+  display: block; /* Da bi dugme bilo centrirano */
+  margin: 0 auto; /* Centriranje dugmeta */
+}
+
+.border-cross-container button:hover {
+  background-color:blue; /* Boja dugmeta prilikom prelaska preko njega */
+}

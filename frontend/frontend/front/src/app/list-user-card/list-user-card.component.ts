@@ -16,7 +16,7 @@ export class ListUserCardComponent implements OnInit{
   }
   ngOnInit(): void {
     this.arrUsers$=this.userService.getAllUsers();
-    this.arrUsers$.subscribe();
+    this.arrUsers$.subscribe(x=>console.log(x));
   }
 
 }

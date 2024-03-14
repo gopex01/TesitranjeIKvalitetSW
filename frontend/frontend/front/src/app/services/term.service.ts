@@ -66,4 +66,9 @@ export class TermService {
     return this.httpClient.delete(this.route+`deleteTerm/${idTerm}`).subscribe();
     
   }
+
+  getNumOfTerms()
+  {
+    return this.httpClient.get(this.route+`getNumOfTerms`);
+  }
 }

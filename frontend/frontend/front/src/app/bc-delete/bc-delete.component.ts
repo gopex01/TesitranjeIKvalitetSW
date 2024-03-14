@@ -12,7 +12,7 @@ export class BcDeleteComponent implements OnInit {
 
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
   
   constructor(private BCService:BcService)

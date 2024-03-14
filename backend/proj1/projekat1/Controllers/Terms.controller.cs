@@ -30,7 +30,7 @@ public class TermEntityController:ControllerBase
     }
     [HttpGet]
     [Route("getNumOfTerms")]
-    public ActionResult<int?>getNumOfTerms()
+    public ActionResult<int>getNumOfTerms()
     {
         var result=terminService.getNumOfTerms();
         return Ok(result);
