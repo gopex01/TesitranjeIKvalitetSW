@@ -7,6 +7,7 @@
   border-radius: 10px; /* Dodajte zaobljenost ivica */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Dodajte senku */
   background-color: #f0f0f0; /* Postavite boju pozadine */
+
 }
 
 .border-cross-container h1 {
@@ -16,6 +17,7 @@
 .border-cross-container ul {
   list-style: none; /* Uklonite podrazumevane tačke */
   padding: 0; /* Uklonite podrazumevani padding */
+ 
 }
 
 .border-cross-container li {

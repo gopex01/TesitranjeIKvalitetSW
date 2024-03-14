@@ -13,9 +13,18 @@
   }
   
   .user-info {
+    display: flex;
+    flex-direction: row;
     margin-top: 20px;
     text-align: center; /* Centriranje teksta */
-  }
+    justify-content: space-around; /* Rasporedivanje elemenata ravnomerno */
+    align-items: center; /* Poravnanje po vertikali */
+}
+
+.user-info div {
+    flex: 1; /* Ravnomerno raspoređivanje prostora između div-ova */
+}
+
   
   .user-info p {
     margin-bottom: 10px;

@@ -2,5 +2,9 @@
 {
  display: flex;
  flex-wrap: wrap;
-
+ }
+ 
+.proba
+{
+    margin:20px;
 }

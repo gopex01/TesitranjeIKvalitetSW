@@ -1,9 +1,16 @@
 <div class="container" data-testid="admin-container">
     <h1 data-tesid="h1-admin">Admin Panel</h1>
     <div class="user-info" data-testid="admin-info">
-      --<p data-testid="admin-username"><strong>Current active Users:</strong> {{ numberOfUsers}}</p>
+      <div>
+      <p data-testid="admin-username"><strong>Current active Users:</strong> {{ numberOfUsers}}</p>
+    </div>
+    <div>
       <p data-testid="admin-username"><strong>Current active BCS:</strong> {{numberOfBcs}}</p>
+    </div>
+    <div>
       <p data-testid="admin-password"><strong>Current active Terms:</strong> {{ numberOfTerms }}</p>
+    </div>
+    </div>
       <!-- Dodajte dodatne informacije o adminu po potrebi -->
       <div class="butons">
         <button  class="button"  (click)="DodajBC()"> Add Border Cross</button>
@@ -12,5 +19,5 @@
         <button class="button" (click)="prebaciNaDelete()">Delete Border Cross</button>
       </div>
     </div>
-  </div>
+  
 
