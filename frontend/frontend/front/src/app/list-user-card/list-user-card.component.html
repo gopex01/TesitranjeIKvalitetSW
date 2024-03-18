@@ -1,5 +1,5 @@
 
-<div class="mainDiv">
+<div class="mainDiv" data-testid="alluserscontainer">
     <div class="user" *ngFor="let us of arrUsers$ | async">
         <app-user-card [user]="us"></app-user-card>
     </div>

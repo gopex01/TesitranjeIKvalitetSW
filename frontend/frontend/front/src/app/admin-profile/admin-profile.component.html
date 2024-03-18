@@ -13,10 +13,11 @@
     </div>
       <!-- Dodajte dodatne informacije o adminu po potrebi -->
       <div class="butons">
-        <button  class="button"  (click)="DodajBC()"> Add Border Cross</button>
-        <button class="button" (click)="gotoALLBCS()">All Border Crosses</button>
-        <button class="button" (click)="gotoAllUsers()">All Users</button>
-        <button class="button" (click)="prebaciNaDelete()">Delete Border Cross</button>
+        <button  class="button"  (click)="DodajBC()" data-testid="addbcadmin"> Add Border Cross</button>
+        <button class="button" (click)="gotoALLBCS()" data-testid="allbcs">All Border Crosses</button>
+        <button class="button" (click)="gotoAllUsers()" data-testid="allusers">All Users</button>
+        <button class="button" (click)="prebaciNaDelete()" data-testid="deletebc">Delete Border Cross</button>
+        <button class="button" (click)="logout()" data-testid="logout">Logout</button>
       </div>
     </div>
   

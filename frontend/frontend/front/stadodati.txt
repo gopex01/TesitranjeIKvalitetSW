@@ -1,2 +1,1 @@
-
-sign up
+craete term ispravi(znaci promeni kom se dodaje termin i sto je numofpass uvek 0)

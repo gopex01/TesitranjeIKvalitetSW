@@ -1,4 +1,4 @@
-<div class="MainDiv">
+<div class="MainDiv" data-testid="listPersonalTerms">
     <div *ngFor="let t of arrayTerm$ |async">
         <app-personal-term-card [term]="t"></app-personal-term-card>
     </div>

@@ -61,10 +61,22 @@ export class LoginService {
       jmbg:jmbg
     };
 
-      console.log("otac moj");
     this.httpClient.post
-    (`http://localhost:5078/UserEntityConttoller/User/addUser`, obj).subscribe((x:any)=> console.log(x.status));
-    console.log("bastami");
+    (`http://localhost:5078/UserEntityConttoller/User/addUser`, obj,{responseType:'text'}).subscribe({
+      next:(response:any)=>{
+        if(response=='Korisnik uspesno dodat')
+        {
+          window.alert("Sucess registration, login to continue");
+        }
+        else{
+          window.alert("Error");
+        }
+      },
+      error:(err:any)=>{
+        window.alert("Error");
+      }
+    });
+  
 
 
 

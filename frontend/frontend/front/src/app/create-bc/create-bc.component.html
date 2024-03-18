@@ -1,4 +1,4 @@
-<div class="login-page">
+<div class="login-page" data-testid="create-bc-container">
   <div class="form">
       <form class="register-form acrylic"></form>
 
@@ -16,6 +16,6 @@
           <input data-testid="PhoneNumber" type="text" placeholder="PhoneNumber" [(ngModel)]="phoneNumber" />
           <input data-testid="Description" type="text" placeholder="Description" [(ngModel)]="description" />
 
-          <button id="DodajBC" (click)="dodajBC()">Dodaj border cross</button>
+          <button id="DodajBC" (click)="dodajBC()" data-testid="addbcbutton">Dodaj border cross</button>
   </div>
 </div>

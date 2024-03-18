@@ -1,5 +1,5 @@
 
-<div class="MainDiv">
+<div class="MainDiv" data-testid="bcallterms">
     <div *ngFor="let t of arrayTerm$ |async">
         <app-bc-term-card [term]="t"></app-bc-term-card>
     </div>

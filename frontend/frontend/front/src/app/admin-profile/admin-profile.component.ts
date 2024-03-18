@@ -60,5 +60,9 @@ constructor(private AdminService:AdminService, private router:Router, private us
   {
     this.router.navigate(['deleteBC']);
   }
+  logout()
+  {
+    this.router.navigate(['/']);
+  }
 
 }

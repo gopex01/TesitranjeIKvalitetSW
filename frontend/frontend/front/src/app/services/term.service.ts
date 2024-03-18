@@ -19,7 +19,7 @@ export class TermService {
   createTerm(numOfPassanger:number,carBrand:string,numOfRegistration:string,chassisNumber:string,numberOfDays:number,placeOfResidence:string,dateAndTime:string,cardNumber:string)
   {
     let op;
-    if(cardNumber.length==16)
+    if(cardNumber.length==8)
     {
       op=true;
     }
@@ -39,8 +39,15 @@ export class TermService {
       isComeBack:false,
       irregularities:'',
       accepted:false
-    }
-      this.httpClient.post(this.route+`addTerm/petar/Gradina`,obj).subscribe((p)=>console.log(p));    
+    }//dodaj ovamo
+      this.httpClient.post(this.route+`addTerm/petar/Gradina`,obj,{responseType:'text'}).subscribe({
+        next:(response:any)=>{
+          window.alert("Success created term")
+        },
+        error:(err:any)=>{
+          window.alert("Error")
+        }
+      });    
   }
   getPersonalTerms()
   {
@@ -58,12 +65,36 @@ export class TermService {
   }
   updateTerm(idTerm:any,isCrossed:any,isComeBack:any,irregularities:any)
   {
-    return this.httpClient.patch(this.route+`updateTerm/${idTerm}/${isCrossed}/${isComeBack}/${irregularities}`,{}).subscribe();
+    return this.httpClient.patch(this.route+`updateTerm/${idTerm}/${isCrossed}/${isComeBack}/${irregularities}`,{},{responseType:'text'}).subscribe({
+      next:(response:any)=>{
+        if(response=="Success")
+        {
+          window.alert("Success updated term!");
+        }
+        else{
+          window.alert("Error");
+        }
+      }
+    });
   }
 
   deleteTerm(idTerm:number)
   {
-    return this.httpClient.delete(this.route+`deleteTerm/${idTerm}`).subscribe();
+    return this.httpClient.delete(this.route+`deleteTerm/${idTerm}`,{responseType:'text'}).subscribe({
+      next:(response:any)=>{
+        if(response=="Success")
+        {
+          window.alert("Success deleted term");
+        }
+        else{
+          window.alert("Error");
+        }
+      },
+      error:(err:any)=>{
+        window.alert
+        ("Error");
+      }
+    });
     
   }
 

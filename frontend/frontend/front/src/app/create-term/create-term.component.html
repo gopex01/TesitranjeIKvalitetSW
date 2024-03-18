@@ -1,5 +1,5 @@
 <h1>Dodavanje border crossa</h1>
-<div class="container">
+<div class="container" data-testid="create-term-container">
   <input
     data-testid="NumOfPassanger"
     type="text"
@@ -57,7 +57,7 @@
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field> -->
-  <mat-form-field>
+  <mat-form-field   data-testid="inputDate">
     <mat-label>Datum</mat-label>
     <input matInput [matDatepicker]="picker" [(ngModel)]="dateAndTime" />
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -69,11 +69,11 @@
     placeholder="CardNumber"
     [(ngModel)]="cardNumber"
   />
-  <select id="borderCrossing" [(ngModel)]="selectedBC">
+  <select id="borderCrossing" [(ngModel)]="selectedBC" data-testid="selectBC">
     <option *ngFor="let option of borderCrossarr$ | async" [value]="option">
       {{ option.name }}
     </option>
   </select>
 
-  <button id="addTerm" (click)="createTerm()">Create Term</button>
+  <button id="addTerm" (click)="createTerm()" data-testid="create-term-button">Create Term</button>
 </div>

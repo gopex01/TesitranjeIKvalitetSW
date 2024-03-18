@@ -64,13 +64,37 @@ export class BcService {
 
     console.log(obj);
 
-    this.httpClient.post(this.route + `addBC`, obj).subscribe(x=>{
-      console.log('resp',x);
+    this.httpClient.post(this.route + `addBC`, obj, { responseType: 'text' }).subscribe({
+      next: (response: any) => {
+        if(response=='new Border Cross added!')
+        {
+          window.alert("Sucess added border cross");
+        }
+        else{
+          window.alert("Error");
+        }
+      },
+      error: (err: any) => {
+        window.alert("Error");
+      }
     });
   }
 
   deleteBC(name: string) {
-  this.httpClient.delete(this.route+`deleteBC/${name}`).subscribe();
+  this.httpClient.delete(this.route+`deleteBC/${name}`,{responseType:'text'}).subscribe({
+    next:(response:any)=>{
+      if(response=='Success')
+      {
+        window.alert("Success deleted border cross");
+      }
+      else{
+        window.alert("Error")
+      }
+    },
+    error:(err:any)=>{
+      window.alert("Error");
+    }
+  });
 
 
   }

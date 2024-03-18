@@ -1,4 +1,4 @@
-<div class="border-cross-container">
+<div class="border-cross-container" data-testid="bccarddelete">
     <h1 data-testid="bcName" >{{ bc.name }} </h1>
     <h1>  <strong></strong>  </h1>
     <ul>
@@ -30,7 +30,7 @@
         <strong>Description:</strong> {{ bc.description }}
       </li>
 
-      <button (click)="obrisiBC()"> Obrisi </button>
+      <button (click)="obrisiBC()" data-testid="delete-bc-button"> Obrisi </button>
     </ul>
   </div>
   

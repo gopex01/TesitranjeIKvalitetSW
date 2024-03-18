@@ -31,4 +31,8 @@ export class UserProfileComponent implements OnInit {
   gotoPersonalTerms() {
     this.router.navigate(["PersonalTerms"]);
   }
+  logout()
+  {
+    this.router.navigate(['/']);
+  }
 }
