@@ -59,18 +59,26 @@ public class UserService{
     public string createUser(UserEntity newUser)
     {
         try{
+            if(newUser.Age<0)
+            {
+                return "Error";
+            }
             dbContext.Users.Add(newUser);
             dbContext.SaveChanges();
             return "Korisnik uspesno dodat";
         }
         catch(Exception ex)
         {
-             return $"Greška prilikom dodavanja korisnika: {ex.Message}";
+             return "Greška prilikom dodavanja korisnika";
         }
     }
     public UserEntity? getUser(string username)
     {
         try{
+            if(username.Length>25)
+            {
+                return null;
+            }
             var user=dbContext.Users.SingleOrDefault(user=>user.Username==username);
             if(user !=null)
             {
@@ -99,6 +107,10 @@ public class UserService{
     public string updatePassword(string newPassword,string username)
     {
         try{
+            if(newPassword.Length<5)
+            {
+                return "error";
+            }
             var user=dbContext.Users.SingleOrDefault(user=>user.Username==username);
             if(user!=null)
             {
@@ -143,6 +155,10 @@ public class UserService{
     public string updatePhoneNumber(string newPhoneNumber,string username )
     {
         try{
+            if(newPhoneNumber.Length>10)
+            {
+                return "error";
+            }
             var user=dbContext.Users.SingleOrDefault(user=>user.Username==username);
             if(user!=null)
             {
@@ -163,6 +179,10 @@ public class UserService{
     public string updateUsername(string newUsername,string username)
     {
         try{
+            if(newUsername.Length>25)
+            {
+                return "error";
+            }
             var user=dbContext.Users.SingleOrDefault(user=>user.Username==username);
             if(user!=null)
             {

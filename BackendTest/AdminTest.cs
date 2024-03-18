@@ -16,7 +16,8 @@ namespace BackendTest
         private AppDbContext appContext;
         private AdminService adminService;
 
-        [SetUp]
+        //[SetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
             var options = new DbContextOptionsBuilder<AppDbContext>()
@@ -84,11 +85,30 @@ namespace BackendTest
         }
 
 
+        //new
         [Test]
-        public void CreateAdmin_ExceptionThrown_ReturnsErrorMessage()
+        [TestCase("","asd")]
+        public void CreateAdmin_EmptyUsernameOrPassword_ReturnsErrorMessage(string username, string password)
         {
-                //ovo naknadno
+            // Arrange
+            var adminService = new AdminService(appContext);
+            var newAdmin = new AdminEntity
+            {
+                Username = username, // prazan username 
+                Password = password 
+            };
+
+            // Act
+            var result = adminService.createAdmin(newAdmin);
+
+            // Assert
+            Assert.AreEqual("Korisnicko ime ili lozinka nisu uneseni", result);
         }
+
+
+
+
+
 
         [Test]
         [TestCase("Zeljko Vasic")]
@@ -102,18 +122,99 @@ namespace BackendTest
 
         [Test]
         [TestCase("nonusername")]
-        public void getAdminNull(string username)
+        public void getAdminWrongUsername(string username)
         {
             var result = adminService.getAdmin(username);
             Assert.That(result, Is.Null);
         }
 
         [Test]
-        [TestCase("nonusername")]
-        public void getUserExceptionThrowReturnNull(string username)
+        [TestCase(1)]
+        public void deleteAdminSuccess(int id)
         {
-            //da se doda
+            var result = adminService.deleteAdmin(id);
+            Assert.AreEqual("Success", result);
+
         }
+
+        [Test]
+        [TestCase(10)]
+        public void deleteAdminNotFound(int id)
+        {
+            var result = adminService.deleteAdmin(id);
+            Assert.AreEqual("Not found", result);
+
+        }
+
+        [Test]
+        [TestCase(-1)]
+        public void deleteAdminNegativeID(int id)
+        {
+            var result = adminService.deleteAdmin(id);
+            Assert.AreEqual("Negativan ID", result);
+
+        }
+
+
+        [Test]
+        [TestCase(1,"newUsername")]
+        public void updateAdminsUsernameSuccess(int IdAdmin, string newUsername)
+        {
+            var result = adminService.updateAdminUsername(IdAdmin, newUsername);
+            Assert.AreEqual("Success", result);
+
+        }
+
+        [Test]
+        [TestCase(10, "newUsername")]
+        public void updateAdminsUsernameNonExistingID(int IdAdmin, string newUsername)
+        {
+            var result = adminService.updateAdminUsername(IdAdmin, newUsername);
+            Assert.AreEqual("Not found", result);
+
+        }
+
+        [Test]
+        [TestCase(-10, "newUsername")]
+        public void updateAdminsUsernameNegativeID(int IdAdmin, string newUsername)
+        {
+            var result = adminService.updateAdminUsername(IdAdmin, newUsername);
+            Assert.AreEqual("Negativan ID", result);
+
+        }
+
+
+
+        //password
+
+
+        [Test]
+        [TestCase(1, "newPassword")]
+        public void updateAdminsPasswordSuccess(int IdAdmin, string newPassword)
+        {
+            var result = adminService.updatePassword(IdAdmin, newPassword);
+            Assert.AreEqual("Success", result);
+
+        }
+
+        [Test]
+        [TestCase(10, "newPassword")]
+        public void updateAdminsPasswordNonExistingID(int IdAdmin, string newPassword)
+        {
+            var result = adminService.updatePassword(IdAdmin, newPassword);
+            Assert.AreEqual("Not found", result);
+
+        }
+
+        [Test]
+        [TestCase(-10, "newPassword")]
+        public void updateAdminsPasswordNegativeID(int IdAdmin, string newPass)
+        {
+            var result = adminService.updateAdminUsername(IdAdmin, newPass);
+            Assert.AreEqual("Negativan ID", result);
+
+        }
+
 
 
 

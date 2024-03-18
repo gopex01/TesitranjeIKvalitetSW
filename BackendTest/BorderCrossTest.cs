@@ -14,7 +14,7 @@ namespace BackendTest
         private AppDbContext appContext;
         private BorderCrossService bcService;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
             var options = new DbContextOptionsBuilder<AppDbContext>()

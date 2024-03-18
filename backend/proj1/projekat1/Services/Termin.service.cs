@@ -53,6 +53,10 @@ public async Task<string> createTermin(TermEntity newTermin, string username, st
 }
     public TermEntity[] GetTermsAsync(string username)
     {
+        if(username.Length>= 15)
+        {
+            return null;
+        }
         var terms=dbContext.Terms
         .Where(t=>t.borderCross.Username==username)
         .ToArray<TermEntity>();
@@ -74,6 +78,11 @@ public async Task<string> createTermin(TermEntity newTermin, string username, st
 
     public TermEntity[] GetPersonalTermsAsync(string username)
     {
+        if (username.Length >= 15)
+        {
+            return null;
+        }
+
         var terms= dbContext.Terms
         .Where(t=>t.user.Username==username)
         .ToArray<TermEntity>();
@@ -83,6 +92,11 @@ public async Task<string> createTermin(TermEntity newTermin, string username, st
 
     public string updateTerm(int id,bool IsCrossed,bool IsComeBack,string irreg)
     {
+
+        if( id<=0)
+        {
+            return "Negativan ID";
+        }
         var term=dbContext.Terms.FirstOrDefault(t=>t.Id==id);
         if(term==null)
         {
@@ -98,6 +112,10 @@ public async Task<string> createTermin(TermEntity newTermin, string username, st
 
     public string deleteTerm(int idTerm)
     {
+        if (idTerm <= 0)
+        {
+            return "Negativan ID";
+        }
         var term = dbContext.Terms.FirstOrDefault(t => t.Id == idTerm);
         if (term == null)
         {

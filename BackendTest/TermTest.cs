@@ -17,7 +17,7 @@ namespace BackendTest
         private BorderCrossService borderCrossService;
         private UserService userService;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
             var options = new DbContextOptionsBuilder<AppDbContext>()
@@ -158,38 +158,45 @@ namespace BackendTest
 
 
 
-        [Test]
-        [TestCase()]
-        public void addTerminThrowException()
-        {
+        //[Test]
+        //[TestCase()]
+        //public void addTerminThrowException()
+        //{
 
-        }
+        //}
 
         [Test]
+        [Order(3)]
         [TestCase("GradinaGP")]
         public async Task getTermsAsyncSuccess(string username)
         {
-            var result = terminService.GetTermsAsync(username);
-            Assert.AreEqual(result?.Count(), 1);
+            var result =   terminService.GetTermsAsync(username);
+            Assert.AreEqual(1,result.Length);
         }
         [Test]
         [TestCase("PresevoGP")]
         public async Task getTermsAsyncNull(string username)
         {
             var result =  terminService.GetTermsAsync(username);
-            Assert.That(result, Is.Null);
+            Assert.That(result, Is.Empty);
         }
+
+
         [Test]
-        [TestCase()]
-        public void getTermsAsyncThrowException()
+        [TestCase("brojslovaveciod15asdasdegww")]
+        public async Task GetTaskAsyncMoreThan15letters(string username)
         {
+            var result= terminService.GetTermsAsync(username);
+            Assert.That(result, Is.Null);
 
         }
+
+       
         [Test]
         public void getNumOfTermsSuccess()
         {
             var result=terminService.getNumOfTerms();
-            Assert.AreEqual(result, 3);
+            Assert.AreEqual(result, 3); 
         }
         [Test]
         public void getNumOfTermsWhenDatabaseIsEmpty()
@@ -204,13 +211,35 @@ namespace BackendTest
 
         }
 
+
         [Test]
-        public void getNumOfTermsThrowException()
+        [Order(2)]
+        [TestCase(2, true, false, "sve ok")]
+        public void updateTerm(int idTerm, Boolean isCrosses, Boolean isComeBack, string irreg)
         {
 
+            var result = terminService.updateTerm(idTerm, isCrosses, isComeBack, irreg);
+
+            Assert.AreEqual("Success", result);
+
+
         }
-
-
+        [Test]
+        [Order(3)]
+        [TestCase(58,true,true,"no")]
+        public void updateTermError(int idTerm,Boolean isCrossed,Boolean isComeBack,string irregularities)
+        {
+            var result=terminService.updateTerm(idTerm,isCrossed,isComeBack,irregularities);
+            Assert.AreEqual("error", result);
+        }
+        [Test]
+        [Order(4)]
+        [TestCase(-10,true,true,"no")]
+        public void updateTermBadID(int idTerm,Boolean isCrossed,Boolean isComeBack,string iireg)
+        {
+            var result= terminService.updateTerm(idTerm,isCrossed,isComeBack,iireg);
+            Assert.AreEqual("Negativan ID", result);
+        }
 
         [Test]
         [TestCase("zeks")]
@@ -226,11 +255,49 @@ namespace BackendTest
         {
 
             var result =  terminService.GetPersonalTermsAsync(username);
-            Assert.That(result, Is.Null);
+            Assert.That(result, Is.Empty);
 
         }
+
         [Test]
-        [TestCase()]
-        public void getPersonalTermsThrowException() { }
-    }
+        [TestCase("usernameduziod15karaktera")]
+        public async Task getPersonalTermsMorethan15(string username)
+        {
+            var result = terminService.GetPersonalTermsAsync(username);
+            Assert.That(result, Is.Null);
+        }
+        [Test]
+        [Order(15)]
+        [TestCase(3)]
+        public void deleteTermSuccess(int id)
+        {
+            var result=terminService.deleteTerm(id);
+            Assert.AreEqual(result, "Success");
+        }
+        [Test]
+        [Order(16)]
+        [TestCase(54)]
+        public void deleteTermError(int id)
+        {
+            var result = terminService.deleteTerm(id);
+            Assert.AreEqual(result, "error");
+        }
+        [Test]
+        [Order(17)]
+        [TestCase(-10)]
+        public void deleteTermBadID(int id)
+        {
+            var result = terminService.deleteTerm(id);
+            Assert.AreEqual(result, "Negativan ID");
+            //napisal sam odo da serem
+            //
+        }
+
+
+
+
+
+
+  }
+
 }
