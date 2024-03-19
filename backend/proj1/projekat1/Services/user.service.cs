@@ -59,13 +59,17 @@ public class UserService{
     public string createUser(UserEntity newUser)
     {
         try{
-            if(newUser.Age<0)
+            if (newUser.Age < 0)
             {
                 return "Error";
+
             }
-            dbContext.Users.Add(newUser);
-            dbContext.SaveChanges();
-            return "Korisnik uspesno dodat";
+            else
+            {
+                dbContext.Users.Add(newUser);
+                dbContext.SaveChanges();
+                return "Korisnik uspesno dodat";
+            }
         }
         catch(Exception ex)
         {

@@ -14,13 +14,23 @@ public class BorderCrossService
     public string createBorderCross(BorderCrossEntity newBorderCross)
     {
         try{
+
+            if(newBorderCross.PhoneNumber.Length >=11)
+            {
+                return "Not valid phoneNumber";
+            }
+            if(newBorderCross.Username.Length>25)
+            {
+                return "Not valid username";
+            }
+
             dbContext.CrossBorders.Add(newBorderCross); 
             dbContext.SaveChanges();
             return "new Border Cross added!";
         }
         catch(Exception ex)
         {
-            return $"Error when adding a border crossing : {ex.Message}";
+            return "Error when adding a border crossing";
         }
     }
 
@@ -57,6 +67,13 @@ public class BorderCrossService
     public BorderCrossEntity? getBCByName(string name)
     {
         try{
+
+            if(name.Length>25)
+            {
+                return null;
+            }
+
+
             var bc=dbContext.CrossBorders.SingleOrDefault(bc=>bc.Name==name);
             if(bc!=null){
             return bc;
@@ -78,6 +95,12 @@ public class BorderCrossService
     public string deleteBC(string name)
     {
         var bc=dbContext.CrossBorders.SingleOrDefault(bc=>bc.Name==name);
+
+          if (name.Length > 25)
+        {
+            return "Too long name";
+        }
+
         if(bc==null){
             return "Error";
         }
