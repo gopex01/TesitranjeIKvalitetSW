@@ -1,31 +1,31 @@
 .border-cross-container {
-  border: 1px solid #ccc; /* Dodajte boju i debljinu okvira */
-  padding: 20px; /* Dodajte unutrašnji prostor oko elementa */
-  width: 400px; /* Opcionalno: Postavite širinu div-a */
-  text-align: left; /* Postavite tekst na levo */
-  margin: 20px; /* Dodajte prostor oko kontejnera */
-  border-radius: 10px; /* Dodajte zaobljenost ivica */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Dodajte senku */
-  background-color: #f0f0f0; /* Postavite boju pozadine */
+  border: 1px solid #ccc; 
+  padding: 20px;
+  width: 400px;
+  text-align: left; 
+  margin: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  background-color: #f0f0f0; 
 
 }
 
 .border-cross-container h1 {
-  margin-bottom: 20px; /* Dodajte razmak ispod naslova */
+  margin-bottom: 20px; 
 }
 
 .border-cross-container ul {
-  list-style: none; /* Uklonite podrazumevane tačke */
-  padding: 0; /* Uklonite podrazumevani padding */
+  list-style: none; 
+  padding: 0; 
  
 }
 
 .border-cross-container li {
-  margin-bottom: 10px; /* Dodajte razmak između stavki */
+  margin-bottom: 10px; 
 }
 
 .border-cross-container strong {
-  margin-right: 5px; /* Dodajte razmak sa desne strane jakih oznaka */
+  margin-right: 5px; 
 }
 
 h1

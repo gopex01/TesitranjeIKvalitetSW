@@ -66,9 +66,9 @@ namespace BackendTest
         public async Task addTerminSuccess(int numOfPassenger, string CarBrand, string NumOfRegistrationPlates, string ChassisNumber, int NumberOfDays, string placeOfResidence,
      bool isPaid, bool isCrossed, bool isComeBack, string irregularities, bool Accepted)
         {
-            DateTime dateAndTime = DateTime.MinValue; // Možete koristiti DateTime.MinValue, DateTime.MaxValue ili bilo koju drugu konstantu koja odgovara vašim potrebama u testiranju.
+            DateTime dateAndTime = DateTime.MinValue; 
 
-            // Testiranje logike metode addTerminSuccess
+           
             var newTerm = new TermEntity
             {
                  NumOfPassengers = numOfPassenger,
@@ -98,9 +98,9 @@ namespace BackendTest
         public async Task AddTerminBadUsername(int numOfPassenger, string CarBrand, string NumOfRegistrationPlates, string ChassisNumber, int NumberOfDays, string placeOfResidence,
         bool isPaid, bool isCrossed, bool isComeBack, string irregularities, bool Accepted)
         {
-            DateTime dateAndTime = DateTime.MinValue; // Možete koristiti DateTime.MinValue, DateTime.MaxValue ili bilo koju drugu konstantu koja odgovara vašim potrebama u testiranju.
+            DateTime dateAndTime = DateTime.MinValue; 
 
-            // Testiranje logike metode addTerminSuccess
+           
             var newTerm = new TermEntity
             {
                 NumOfPassengers = numOfPassenger,
@@ -130,9 +130,9 @@ namespace BackendTest
         public async Task AddTerminBadBorderCross(int numOfPassenger, string CarBrand, string NumOfRegistrationPlates, string ChassisNumber, int NumberOfDays, string placeOfResidence,
       bool isPaid, bool isCrossed, bool isComeBack, string irregularities, bool Accepted)
         {
-            DateTime dateAndTime = DateTime.MinValue; // Možete koristiti DateTime.MinValue, DateTime.MaxValue ili bilo koju drugu konstantu koja odgovara vašim potrebama u testiranju.
+            DateTime dateAndTime = DateTime.MinValue; 
 
-            // Testiranje logike metode addTerminSuccess
+           
             var newTerm = new TermEntity
             {
                 NumOfPassengers = numOfPassenger,
@@ -158,12 +158,7 @@ namespace BackendTest
 
 
 
-        //[Test]
-        //[TestCase()]
-        //public void addTerminThrowException()
-        //{
-
-        //}
+       
 
         [Test]
         [Order(3)]
@@ -289,8 +284,7 @@ namespace BackendTest
         {
             var result = terminService.deleteTerm(id);
             Assert.AreEqual(result, "Negativan ID");
-            //napisal sam odo da serem
-            //
+           
         }
 
 

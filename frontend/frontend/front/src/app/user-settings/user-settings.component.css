@@ -11,7 +11,7 @@
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #12141d 100%);
 }
 
-/* Stil za svaku sekciju (nameAndSurname, email, itd.) */
+
 .nameAndsurname,
 .email,
 .phonenumber,
@@ -23,14 +23,14 @@
     flex-direction: column;
 }
 
-/* Stil za paragrafe */
+
 p {
     font-size: 18px;
     color:ivory;
     font-family: 'Poppins', sans-serif;
 }
 
-/* Stil za dugmad "promeni" i "sačuvaj promene" */
+
 button {
     background-color: #007bff;
     color: #fff;
@@ -48,7 +48,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Stil za input polje */
+
 input {
     width: 100%;
     padding: 12px;
@@ -60,7 +60,7 @@ input {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Stil za pozadinu moda */
+
 .modal-bg {
     display: none;
     position: fixed;
@@ -73,7 +73,7 @@ input {
     align-items: center;
 }
 
-/* Stil za sadržaj moda */
+
 .modal-content {
     background: #fff;
     padding: 20px;
@@ -82,7 +82,7 @@ input {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Stil za dugme "sačuvaj promene" unutar moda */
+
 .save-changes-btn {
     background-color: #28a745;
     color: #fff;

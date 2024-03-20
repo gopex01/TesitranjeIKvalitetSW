@@ -50,6 +50,10 @@ public class BorderCrossService
     public BorderCrossEntity? getOneBC(string username)
     {
         try{
+            if(username.Length>25)
+            {
+                return null;
+            }
             var bc=dbContext.CrossBorders.SingleOrDefault(bc=>bc.Username==username);
             if(bc!=null)
             {

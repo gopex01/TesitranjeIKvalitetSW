@@ -2,26 +2,26 @@
 <div class="main" data-testid="main">
     <div class="nameAndsurname">
         <p>Name & Surname {{name}}</p>
-        <button class="change-btn" (click)="changeVisibiltyIName()">change</button>
-        <button class="save-changes-btn" (click)="changeName()">savechanges</button>
-        <input *ngIf="isVisibleIName" [(ngModel)]="newName" placeholder="Enter new Name">
+        <button class="change-btn" (click)="changeVisibiltyIName()" data-testid="changeName">change</button>
+        <button class="save-changes-btn" (click)="changeName()" data-testid="saveName">savechanges</button>
+        <input *ngIf="isVisibleIName" [(ngModel)]="newName" placeholder="Enter new Name" data-testid="inputName">
     </div>
     <div class="email">
         <p>Email:{{email}}</p>
-        <button class="change-btn" (click)="changeVisibiltyIEmail()">change</button>
-        <button class="save-changes-btn" (click)="changeEmail()">savechanges</button>
-        <input *ngIf="isVisibleIEmail"[(ngModel)]="newEmail" placeholder="Enter new Email">
+        <button class="change-btn" (click)="changeVisibiltyIEmail()" data-testid="changeEmail">change</button>
+        <button class="save-changes-btn" (click)="changeEmail()" data-testid="saveEmail">savechanges</button>
+        <input *ngIf="isVisibleIEmail"[(ngModel)]="newEmail" placeholder="Enter new Email" data-testid="inputEmail">
     </div>
     <div class="phonenumber">
         <p>Phone Number:{{phone}}</p>
-        <button class="change-btn" (click)="changeVisibiltyIPhone()">change</button>
-        <button class="save-changes-btn" (click)="changePhone()">savechanges</button>
-        <input *ngIf="isVisibleIPhone" [(ngModel)]="newPhone" placeholder="Enter new Phone Number">
+        <button class="change-btn" (click)="changeVisibiltyIPhone()" data-testid="changePhone">change</button>
+        <button class="save-changes-btn" (click)="changePhone()" data-testid="savePhone">savechanges</button>
+        <input *ngIf="isVisibleIPhone" [(ngModel)]="newPhone" placeholder="Enter new Phone Number" data-testid="inputPhone">
     </div>
     <div class="username">
         <p>Username:{{username}}</p>
-        <button class="change-btn" (click)="changeVisibiltyIUsername()">change</button>
-        <button class="save-changes-btn" (click)="changeUsername()">savechanges</button>
+        <button class="change-btn" (click)="changeVisibiltyIUsername()" data-testid="changeUsername">change</button>
+        <button class="save-changes-btn" (click)="changeUsername()" data-testid="saveUsername">savechanges</button>
         <input *ngIf="isVisibleIUsername" [(ngModel)]="newUsername" placeholder="Enter new Username">
     </div>
     <div class="deactivate">

@@ -14,22 +14,22 @@
 
 .user-info {
   margin-top: 20px;
-  text-align: center; /* Centriranje teksta */
+  text-align: center; 
 }
 
 .user-info p {
   margin-bottom: 10px;
-  text-align: left; /* Ponovno postavljanje teksta na lijevu stranu */
+  text-align: left; 
 }
 
 .container {
-  text-align: center; /* Centrirajte sadržaj unutar .container diva */
+  text-align: center; 
 }
 
 .user-info {
-  display: inline-block; /* Promenite display na inline-block kako bi se centriranje primenilo */
-  text-align: left; /* Postavite tekst unutar .user-info diva na levo */
-  margin: 0 auto; /* Centrirajte .user-info div horizontalno */
+  display: inline-block;
+  text-align: left; 
+  margin: 0 auto; 
 }
 
 .button {

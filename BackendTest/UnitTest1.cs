@@ -37,7 +37,7 @@ namespace BackendTest
         }
 
         [Test]
-        [Order(1)]
+        [Order(21)]
         [TestCase("John Doe", "john@example.com","john", "password", "123456789", 25, "12309521101")]
         public void CreateUserSuccessMessage(string NameAndSurname, string email, string username,string password, string phonenumber, int age, string jmbg)
         {
@@ -58,19 +58,18 @@ namespace BackendTest
 
             // Assert
             Assert.That(result, Is.Not.Null);
-
             Assert.AreEqual("Korisnik uspesno dodat", result);
  
         }
         [Test]
-        [Order(2)]
-        [TestCase("John Dap", "johndap@example.com", "johndap", "passworddap", "1415156789", 20, "123067534321101")]
-        public void createUserErrorMessage(string NameAndSurname, string email, string username, string password, string phonenumber, int age, string jmbg)
+        [Order(22)]
+        [TestCase("John Dap", "johndap@example.com", "johndapikskhsjkjaklklahhdifaop", "passworddap", "1415156789", 20, "123067534321101")]
+        public void createUserBadUsername(string NameAndSurname, string email, string username, string password, string phonenumber, int age, string jmbg)
         {
             var newUser = new UserEntity
             {
                 NameAndSurname = NameAndSurname,
-               
+                Email=email,               
                 Username = username,
                 Password = password,
                 PhoneNumber = phonenumber,
@@ -78,12 +77,12 @@ namespace BackendTest
                 JMBG = jmbg
             };
             var result = userService.createUser(newUser);
-            Assert.AreEqual("Greška prilikom dodavanja korisnika", result);
-            TearDown(); 
+            Assert.AreEqual("Error", result);
+       
         }
 
         [Test]
-        [Order(3)]
+        [Order(23)]
         [TestCase("Petar Doe", "petar@example.com", "petar", "petar", "123845119", -25, "123666611201")]
         public void createUserWithBadAgeValue(string NameAndSurname, string email, string username, string password, string phonenumber, int age, string jmbg)
         {
@@ -99,10 +98,11 @@ namespace BackendTest
             };
             var result = userService.createUser(newUser);
             Assert.AreEqual("Error", result);
-            TearDown();
+        
         }
+
+        [Order(1)]
         [Test]
-        [Order(4)]
         [TestCase("zeks")]
         public void getUserReturnSuccess(string username)
         {
@@ -111,8 +111,8 @@ namespace BackendTest
             Assert.That(result, Is.TypeOf<UserEntity>());
             Assert.That(result.Username,Is.EqualTo(username));  
         }
+        [Order(2)]
         [Test]
-        [Order(5)]
         [TestCase("petar")]
         public void getNullUser(string username)
         {
@@ -121,7 +121,7 @@ namespace BackendTest
         }
         
         [Test]
-        [Order(6)]
+        [Order(3)]
         [TestCase("useruseruseruseruseruseruse")]
         public void getUserUsernamelengthmorethan15(string username)
         {
@@ -130,13 +130,13 @@ namespace BackendTest
         }
 
         [Test]
-        [Order(7)]
+        [Order(4)]
         public void getAllUsersReturnArray()
         {
             var result = userService.getAllUsers();
 
             Assert.That(result, Is.Not.Null);
-            Assert.AreEqual(4, result.Length);
+            Assert.AreEqual(3, result.Length);
             Assert.AreEqual("Zeljko Vasic", result[0].NameAndSurname);
             Assert.AreEqual("Mihajlo Madic", result[1].NameAndSurname);
             Assert.AreEqual("Vladan Vasic", result[2].NameAndSurname);
@@ -145,7 +145,7 @@ namespace BackendTest
         [Order(24)]
         public void getUsersWhenDatabaseIsEmpty()
         {
-            //prvo se uklone useri iz baze
+            
 
             appContext.Users.RemoveRange(appContext.Users);
             appContext.SaveChanges();
@@ -153,26 +153,26 @@ namespace BackendTest
             var result = userService.getAllUsers();
             Assert.That(result, Is.Not.Null);
             Assert.AreEqual(result.Length, 0);
-            TearDown();
+            
         }
 
 
         [Test]
-        [Order(8)]
+        [Order(5)]
         public void getNumOfUsers()
         {
-            // Act
+            
             var result = userService.getNumOfUsers();
-            Assert.AreEqual(4, result);
+            Assert.AreEqual(3, result);
 
         }
 
 
         [Test]
-        [Order(23)]
+        [Order(25)]
         public void getNumOfUsersWhenDatabaseIsEmpty()
         {
-            //prvo se uklone useri iz baze
+            
 
             appContext.Users.RemoveRange(appContext.Users);
             appContext.SaveChanges();
@@ -180,7 +180,7 @@ namespace BackendTest
             var result = userService.getNumOfUsers();
            
             Assert.AreEqual(result, 0);
-            TearDown();
+            
         }
 
 
@@ -188,55 +188,55 @@ namespace BackendTest
 
 
         [Test]
-        [Order(9)]
+        [Order(6)]
         [TestCase("newPassword", "zeks")]
         public void UpdatePasswordToExistingUser(string newPassword, string username)
         {
             
 
-            // Act
+            
             var result = userService.updatePassword(newPassword, username);
 
             var user = userService.getUser(username);
 
-            // Assert
+            
             Assert.That(result, Is.Not.Null);
 
             Assert.AreEqual("Success", result);
 
             Assert.AreEqual(user.Password, newPassword);
-            TearDown();
+           
         }
 
 
 
 
         [Test]
-        [Order(10)]
+        [Order(7)]
         [TestCase("newPassword", "nonExisstringPassword")]
         public void UpdatePasswordNonExistingUser(string newPassword, string username)
         {
             
 
-            // Act
+            
             var result = userService.updatePassword(newPassword, username);
 
-            // Assert
+           
             Assert.AreEqual("Error", result);
-            TearDown();
+       
 
 
         }
 
 
         [Test]
-        [Order(11)]
-        [TestCase("newPasswordasidjsaijdi","zeks")]
+        [Order(9)]
+        [TestCase("newP","zeks")]
         public void updatePasswordLengthNewPassError(string newPassword,string username)
         {
             var result=userService.updatePassword(newPassword,username);
             Assert.AreEqual(result, "error");
-            TearDown();
+            
 
 
         }
@@ -244,23 +244,23 @@ namespace BackendTest
 
 
         [Test]
-        [Order(20)]
-        [TestCase("zeljko", "zeks")]
+        [Order(18)]
+        [TestCase("mixa", "mixa")]
         
         public void DeactivateAccountValid(string password,string username)
         {
             
             
-            // Act
+           
             var result = userService.deactivateAccount(username, password);
 
-            // Assert
-            Assert.AreEqual("Success", result); TearDown();
+           
+            Assert.AreEqual("Success", result); 
         }
 
 
         [Test]
-        [Order(21)]
+        [Order(19)]
         public void DeactivateAccountInvalidPassword()
         {
             
@@ -270,26 +270,26 @@ namespace BackendTest
             // Act
             var result = userService.deactivateAccount(username, password);
 
-            // Assert
+           
             Assert.AreEqual("Error", result);
-            TearDown();
+         
         }
 
 
         [Test]
-        [Order(22)]
+        [Order(20)]
         public void DeactivateAccount_NonexistentUser_ReturnsError()
         {
             
             string username = "nonexistentUser";
             string password = "zeljko";
 
-            // Act
+           
             var result = userService.deactivateAccount(username, password);
 
-            // Assert
+           
             Assert.AreEqual("Error", result);
-            TearDown();
+        
         }
 
 
@@ -297,125 +297,120 @@ namespace BackendTest
 
 
 
-        //UPDATEPHONENUMBER
+        
         [Test]
-        [Order(12)]
+        [Order(10)]
         [TestCase("065123456", "zeks")]
         public void UpdatePhoneNumberExistingUser(string newPhoneNumber, string username)
         {
             var result = userService.updatePhoneNumber(newPhoneNumber, username);
             Assert.AreEqual("Success", result);
-            TearDown();
+      
         }
 
 
         [Test]
-        [Order(13)]
+        [Order(11)]
         [TestCase("065123456", "nonexistentUser")]
         public void UpdatePhoneNumber_NonexistentUser_ReturnsError(string newPhoneNumber, string username)
         {
             var result = userService.updatePhoneNumber(newPhoneNumber, username);
             Assert.AreEqual("Error", result);
-            TearDown();
+    
         }
 
         [Test]
-        [Order(14)]
-        [TestCase("065123456", "nonexistentUser")]
+        [Order(12)]
+        [TestCase("0651234521331136", "zeks")]
         public void UpdatePhoneNumberLengthError(string newPhoneNumber, string username)
         {
             var result = userService.updatePhoneNumber(newPhoneNumber, username);
-            Assert.AreEqual(result, "Error");
-            TearDown();
+            Assert.AreEqual(result, "error");
+     
         }
 
 
-        //updateUsername
+        
 
         [Test]
-        [Order(15)]
+        [Order(13)]
         [TestCase("newUsername", "zeks")]
         public void UpdateUsername_ExistingUser_ReturnsSuccess(string newUsername, string username)
         {
-            // Act
+            
             var result = userService.updateUsername(newUsername, username);
-            // Assert
+            
             Assert.AreEqual("Success", result);
-             TearDown();
+          
         }
 
 
         [Test]
-        [Order(16)]
+        [Order(14)]
         [TestCase("newUsername", "nonexistentUser")]
         public void UpdateUsername_NonexistentUser_ReturnsError(string newUsername, string username)
         {
            
 
-            // Act
+            
             var result = userService.updateUsername(newUsername, username);
 
-            // Assert
+            
             Assert.AreEqual("Error", result);
-            TearDown();
+          
         }
 
 
         [Test]
-        [Order(17)] 
+        [Order(15)]
         [TestCase("newUsernameerroeoeoeoeoeoe", "zeks")]
         public void UpdateUsernameLengthError(string newusername,string username)
         {
             var result = userService.updateUsername(newusername, username);
             Assert.AreEqual("error", result);
-            TearDown();
+       
         }
 
 
 
-        //UPDATENAME
+        
 
         [Test]
-        [Order(18)]
-        [TestCase("New Name", "zeks")]
+        [Order(16)]
+        [TestCase("New Name", "mixa")]
         public void UpdateName_ExistingUser_ReturnsSuccess(string newName, string username)
         {
-            // Arrange
+            
             var userService = new UserService(appContext);
 
-            // Act
+            
             var result = userService.updateName(newName, username);
 
-            // Assert
+            
             Assert.AreEqual("Success", result);
-            TearDown();
+           
         }
 
 
 
         [Test]
-        [Order(19)]
+        [Order(17)]
         [TestCase("New Name", "nonexistentUser")]
         public void UpdateName_NonexistentUser_ReturnsError(string newName, string username)
         {
-            // Arrange
+            
             var userService = new UserService(appContext);
 
-            // Act
+            
             var result = userService.updateName(newName, username);
 
-            // Assert
+            
             Assert.AreEqual("Error", result);
-            TearDown();
+            
         }
 
 
-        [TearDown]
-        public void TearDown()
-        {
-            // Ovdje dodajte kod za brisanje ili resetiranje baze podataka nakon završetka testa
-            appContext.Database.EnsureDeleted();
-        }
+
 
 
 

@@ -48,7 +48,7 @@ namespace BackendTest
         [TestCase("john","password123")]
         public void CreateAdmin_SuccessfullyAddsAdmin_ReturnsSuccessMessage(string username,string password)
         {
-            // Arrange
+            
             var adminService = new AdminService(appContext);
             var newAdmin = new AdminEntity
             {
@@ -56,10 +56,10 @@ namespace BackendTest
                 Password = password
             };
 
-            // Act
+         
             var result = adminService.createAdmin(newAdmin);
 
-            // Assert
+          
             Assert.AreEqual("Admin uspesno dodat", result);
         }
 
@@ -69,7 +69,7 @@ namespace BackendTest
         [TestCase("Zeljko Vasic","password123")]
         public void CreateAdmin_DuplicateUsername_ReturnsErrorMessage(string username,string password)
         {
-            // Arrange
+            
             var adminService = new AdminService(appContext);
             var newAdmin = new AdminEntity
             {
@@ -77,20 +77,20 @@ namespace BackendTest
                 Password = password
             };
 
-            // Act
+           
             var result = adminService.createAdmin(newAdmin);
 
-            // Assert
+            
             Assert.AreEqual("Admin vec postoji", result);
         }
 
 
-        //new
+        
         [Test]
         [TestCase("","asd")]
         public void CreateAdmin_EmptyUsernameOrPassword_ReturnsErrorMessage(string username, string password)
         {
-            // Arrange
+           
             var adminService = new AdminService(appContext);
             var newAdmin = new AdminEntity
             {
@@ -98,10 +98,10 @@ namespace BackendTest
                 Password = password 
             };
 
-            // Act
+            
             var result = adminService.createAdmin(newAdmin);
 
-            // Assert
+            
             Assert.AreEqual("Korisnicko ime ili lozinka nisu uneseni", result);
         }
 
@@ -185,7 +185,7 @@ namespace BackendTest
 
 
 
-        //password
+       
 
 
         [Test]

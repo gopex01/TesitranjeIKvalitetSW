@@ -1,14 +1,14 @@
 .border-cross-container {
   background-color: #f9f9f9;
-  border: 2px solid gray; /* Smeđa boja okvira */
+  border: 2px solid gray; 
   padding: 20px;
-  border-radius: 10px; /* Zaobljeni rubovi */
-  width: 400px; /* Možete prilagoditi širinu prema potrebi */
+  border-radius: 10px;
+  width: 400px; 
 }
 
 .border-cross-container h1[data-testid="bcName"] {
   text-align: center;
-  margin-bottom: 10px; /* Dodajte malo prostora ispod naslova */
+  margin-bottom: 10px; 
 }
 
 .border-cross-container ul {
@@ -30,15 +30,15 @@
 
 .border-cross-container button {
   background-color: #007bff;
-  color: white; /* Boja teksta */
+  color: white; 
   border: none;
-  padding: 10px 20px; /* Dodajte prostor oko teksta dugmeta */
+  padding: 10px 20px; 
   border-radius: 5px;
-  cursor: pointer; /* Promena kursora na pokazivač kada se pređe preko dugmeta */
-  display: block; /* Da bi dugme bilo centrirano */
-  margin: 0 auto; /* Centriranje dugmeta */
+  cursor: pointer; 
+  display: block; 
+  margin: 0 auto; 
 }
 
 .border-cross-container button:hover {
-  background-color:blue; /* Boja dugmeta prilikom prelaska preko njega */
+  background-color:blue; 
 }

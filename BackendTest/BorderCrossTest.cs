@@ -59,8 +59,7 @@ namespace BackendTest
                 Description = desc
             };
             var bc = bcService.createBorderCross(newBC);
-            //Assert.That(bc, Is.Not.Null);
-            //Assert.That(bc, Is.EqualTo("new Border Cross added!"));
+            
             Assert.AreEqual("new Border Cross added!",bc );
 
 
@@ -169,10 +168,11 @@ namespace BackendTest
         
         [Test]
         [Order(10)]
-        [TestCase("GradinaGP")]
-        public void getOneBCThrowException(string username)
+        [TestCase("GradinaGPsadasgasdsjkasldjakdjsalkd")]
+        public void getOneBCLengthUsername(string username)
         {
-            //ovo dodajemo kasnije
+            var result = bcService.getOneBC(username);
+            Assert.That(result, Is.Null);
         }
       
         [Test]
@@ -245,7 +245,7 @@ namespace BackendTest
             var result=bcService.deleteBC(name);
             Assert.That(result, Is.Not.Null);
             Assert.AreEqual(result, "Error");
-            //Assert.AreEqual(3,appContext.CrossBorders.Count());
+            
         }
         
         [Test]

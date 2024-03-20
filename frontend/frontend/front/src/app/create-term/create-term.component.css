@@ -18,7 +18,7 @@ button {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box; /* Dodato kako bi se širina elemenata pravilno računala */
+  box-sizing: border-box; 
 }
 
 button {
@@ -34,21 +34,21 @@ button:hover {
   background-color: #0056b3;
 }
 .container select {
-  width: 50%; /* Promijenjena širina na 100% kako bi se element ispunio container */
+  width: 50%; 
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: #fff; /* Dodana pozadinska boja kako bi se razlikovao od container-a */
+  background-color: #fff; 
   cursor: pointer;
 }
 
 .container select:focus {
-  outline: none; /* Ukloniti outline na fokusiranju, ako želite */
+  outline: none; 
 }
 
-/* Stil za opcije padajuće liste */
+
 .container select option {
   padding: 10px;
 }

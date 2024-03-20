@@ -16,19 +16,19 @@
     display: flex;
     flex-direction: row;
     margin-top: 20px;
-    text-align: center; /* Centriranje teksta */
-    justify-content: space-around; /* Rasporedivanje elemenata ravnomerno */
-    align-items: center; /* Poravnanje po vertikali */
+    text-align: center; 
+    justify-content: space-around; 
+    align-items: center; 
 }
 
 .user-info div {
-    flex: 1; /* Ravnomerno raspoređivanje prostora između div-ova */
+    flex: 1; 
 }
 
   
   .user-info p {
     margin-bottom: 10px;
-    text-align: left; /* Ponovno postavljanje teksta na lijevu stranu */
+    text-align: left; 
   }
   
   .user-info strong {

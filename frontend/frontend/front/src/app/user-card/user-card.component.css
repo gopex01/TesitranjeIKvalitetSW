@@ -4,8 +4,8 @@
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   padding: 20px;
-  border-radius: 10px; /* Zaobljeni rubovi */
-  width: 300px; /* Možete prilagoditi širinu prema  potrebi */
+  border-radius: 10px; 
+  width: 300px; 
 }
 
 .user-entity-container h1 {
